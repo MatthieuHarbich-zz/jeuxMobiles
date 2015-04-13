@@ -1,0 +1,69 @@
+.games{
+	background-color: #11c1f3;
+}
+
+
+
+.btnFlash{
+	background-color: #89CE9A;
+	border:none;
+}
+
+.btnTrash{
+	background-color: #F9B995;
+	border:none;
+}
+
+.btnWash{
+	background-color: #9DE7F9;
+	border:none;
+}
+
+.flash{
+	background-color: #89CE9A;
+}
+
+.trash{
+	background-color: #F9B995;
+}
+
+.wash{
+	background-color: #9DE7F9;
+	
+}
+
+#flash{
+	background-image:url('../img/toilet.png');
+	
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}
+
+#wash{
+	background-image:url('../img/wash.png');
+	background-color: #9DE7F9;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#trash{
+	background-image:url('../img/trash.png');
+	background-color: #F9B995;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#playGamesBtn{
+	height:30%;
+	position: fixed;
+	bottom:0px;
+	padding:0;
+	margin:0;
+	font-size:2em;
+	font-weight: 900;
+	text-transform: uppercase;
+}

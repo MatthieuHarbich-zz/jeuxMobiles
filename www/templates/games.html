@@ -1,0 +1,16 @@
+
+<ion-view class="games" view-title="Games">
+  <ion-content scroll="false">     
+		<ul class="list">
+		    <li ng-style="myStyle" ng-controller="flashCtrl" ng-click="moveToFlash()" class="item btnFlash">
+		      toilettes {{height}}
+		    </li>
+		    <li ng-style="myStyle" ng-controller="trashCtrl" ng-click="moveToTrash()" class="item btnTrash">
+		      sac poubelles
+		    </li>
+		    <li ng-style="myStyle" ng-controller="washCtrl" ng-click="moveToWash()" class="item btnWash">
+		      machine à laver
+		    </li>
+		</ul>
+  </ion-content>
+</ion-view>

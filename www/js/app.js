@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('aquarium', ['ionic', 'aquarium.auth', 'aquarium.constants', 'aquarium.home'])
+angular.module('aquarium', ['ionic', 'aquarium.auth', 'aquarium.constants', 'aquarium.home', 'aquarium.games'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -45,7 +45,8 @@ $ionicConfigProvider.tabs.position('bottom');
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'templates/menu.html'
+      templateUrl: 'templates/menu.html',
+      controller:'appCtrl'
       
       
     })
@@ -57,7 +58,59 @@ $ionicConfigProvider.tabs.position('bottom');
         'app-home': {
   
           templateUrl: 'templates/home.html',
-          controller:'HomeCtrl'
+          controller:'homeCtrl'
+          
+        }
+      }
+    })
+
+    .state('app.games', {
+      url: '/games',
+       views: {
+        
+        'app-home': {
+  
+          templateUrl: 'templates/games.html',
+          controller:'gamesCtrl'
+          
+        }
+      }
+    })
+
+    .state('app.flash', {
+      url: '/flash',
+       views: {
+        
+        'app-home': {
+  
+          templateUrl: 'templates/flash.html',
+          controller:'flashCtrl'
+          
+        }
+      }
+    })
+
+    .state('app.trash', {
+      url: '/trash',
+       views: {
+        
+        'app-home': {
+  
+          templateUrl: 'templates/trash.html',
+          controller:'trashCtrl'
+          
+        }
+      }
+    })
+
+    .state('app.wash', {
+      url: '/wash',
+       views: {
+        
+        'app-home': {
+  
+          templateUrl: 'templates/wash.html',
+          controller:'washCtrl'
           
         }
       }

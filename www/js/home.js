@@ -11,12 +11,34 @@ angular.module('aquarium.home', [])
 
   })
 
-  .controller('HomeCtrl', function(HomeFactory, $scope){
+  .controller('homeCtrl', function(HomeFactory, $scope, $state){
+
+    $scope.moveToGames = function(){
+      
+      $state.go('app.games');
+    }
+
+    
+      
 
     
 
+  })
+
+  .controller('appCtrl', function(HomeFactory, $scope, $state){
+
+    $scope.isGame = function(){
+      
+      console.log($state.current.name);
+      if($state.current.name == 'app.flash' || $state.current.name == 'app.trash' || $state.current.name == 'app.wash'){
+      	return false;
+      }else{
+      	return true;
+      }
+    }
+
     
-      console.log('testCtrl');
+      
 
     
 
