@@ -1,0 +1,35 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content >
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="app-home" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+<div>
+  <ion-side-menu  side="left">
+    
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item  nav-clear menu-close href="#/app/map">
+          Map
+        </ion-item>
+        <ion-item  nav-clear menu-close href="#/app/lastIssues">
+          Last Issues
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/users">
+          Users
+        </ion-item>
+
+         
+          <button nav-clear  menu-close  class="button button-full button-assertive">Logout</button>
+        
+        
+        
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+
+</ion-side-menus>
