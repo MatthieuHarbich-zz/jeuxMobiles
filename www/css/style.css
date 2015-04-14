@@ -67,3 +67,18 @@
 	font-weight: 900;
 	text-transform: uppercase;
 }
+
+.gameImg{
+	position:absolute;
+	top:0;
+	max-width: 50%;
+}
+
+.imgScore{
+	text-align:right;
+	margin-right: 5%;
+	font-size: 3em;
+	color:white;
+	font-weight: 800;
+	
+}

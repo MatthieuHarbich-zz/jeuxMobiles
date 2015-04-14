@@ -3,13 +3,17 @@
   <ion-content scroll="false">     
 		<ul class="list">
 		    <li ng-style="myStyle" ng-controller="flashCtrl" ng-click="moveToFlash()" class="item btnFlash">
-		      toilettes {{height}}
+		      <img class="gameImg" src="../img/toilet.png" ng-style="myStyle" alt="">
+		      <div class="imgScore" ng-style="myStyle">213</div>
+
 		    </li>
 		    <li ng-style="myStyle" ng-controller="trashCtrl" ng-click="moveToTrash()" class="item btnTrash">
-		      sac poubelles
+		      <img class="gameImg" src="../img/trash.png" ng-style="myStyle" alt="">
+		      <div class="imgScore" ng-style="myStyle">123</div>
 		    </li>
 		    <li ng-style="myStyle" ng-controller="washCtrl" ng-click="moveToWash()" class="item btnWash">
-		      machine à laver
+		      <img class="gameImg" src="../img/wash.png" ng-style="myStyle" alt="">
+		      <div class="imgScore" ng-style="myStyle">453</div>
 		    </li>
 		</ul>
   </ion-content>
