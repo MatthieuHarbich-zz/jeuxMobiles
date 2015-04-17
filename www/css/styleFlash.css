@@ -39,17 +39,17 @@
 }
 
 .porte1movementout {
-    -moz-transition: all 2s;
-    -webkit-transition: all 2s;
-    -o-transition: all 2s;
-    transition: all 2s;
+    -moz-transition: all 4s;
+    -webkit-transition: all 4s;
+    -o-transition: all 4s;
+    transition: all 4s;
     top: 150vw;
 }
 
 .porte2movementout {
-    -moz-transition: all 2s;
-    -webkit-transition: all 2s;
-    -o-transition: all 2s;
-    transition: all 2s;
+    -moz-transition: all 4s;
+    -webkit-transition: all 4s;
+    -o-transition: all 4s;
+    transition: all 4s;
     top:-300vw;
 }

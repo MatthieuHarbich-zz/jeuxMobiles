@@ -6,7 +6,7 @@ angular.module('aquarium.trash', [])
                     // watch the degrees attribute, and update the UI when it changes
                     scope.$watch(attrs.degrees, function (vh) {
 
-                        if (vh < (-10) || vh > 99)
+                        if (vh < (-30) || vh > 99)
                         {
                             element.css({
                                 'display': 'none',
@@ -17,7 +17,7 @@ angular.module('aquarium.trash', [])
                         {
                             //transform the css to rotate based on the new rotateDegrees
                             element.css({
-                                'transition': 'all 0.4s',
+                                'transition': 'all 0.8s',
                                 'display': 'block',
                                 'top': vh + '%'
                             });
@@ -35,7 +35,7 @@ angular.module('aquarium.trash', [])
                     scope.$watch(attrs.degrees, function (vh) {
 
 
-                        if (vh < (-10) || vh > 99)
+                        if (vh < (-30) || vh > 99)
                         {
                             element.css({
                                 'display': 'none',
@@ -46,7 +46,7 @@ angular.module('aquarium.trash', [])
                         {
                             //transform the css to rotate based on the new rotateDegrees
                             element.css({
-                                'transition': 'all 0.4s',
+                                'transition': 'all 0.8s',
                                 'display': 'block',
                                 'top': vh + '%'
                             });
@@ -63,7 +63,7 @@ angular.module('aquarium.trash', [])
                     scope.$watch(attrs.degrees, function (vh) {
 
 
-                        if (vh < (-10) || vh > 99)
+                        if (vh < (-30) || vh > 99)
                         {
                             element.css({
                                 'display': 'none',
@@ -74,7 +74,7 @@ angular.module('aquarium.trash', [])
                         {
                             //transform the css to rotate based on the new rotateDegrees
                             element.css({
-                                'transition': 'all 0.4s',
+                                'transition': 'all 0.8s',
                                 'display': 'block',
                                 'top': vh + '%'
                             });
@@ -288,7 +288,7 @@ angular.module('aquarium.trash', [])
                 }
 
                 var watchID;
-                var time_affichage = 20;
+                var time_affichage = 200;
                 function start()
                 {
                     game();

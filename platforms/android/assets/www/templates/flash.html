@@ -1,5 +1,6 @@
 <ion-view class="flash" view-title="Flash">
-  <ion-content id="flash" scroll="false">     
+  <ion-content id="flash" scroll="false" on-tap="onTape()">     
+      <p>{{number}}</p>
       <div class="porte1" ng-class="{'porte1movementin':animation.port1in}" ng-class="{'porte1movementout':animation.port1out}"></div>
       <div class="porte2" ng-class="{'porte2movementin':animation.port2in}" ng-class="{'porte2movementout':animation.port2out}"></div>
   </ion-content>

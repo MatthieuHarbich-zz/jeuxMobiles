@@ -82,7 +82,7 @@ angular.module('aquarium.wash', [])
                 var mid = 0;
 
 
-                var time_affichage = 20;
+                var time_affichage = 200;
                 var time_capteur = 20;
 
                 var compteur = 0;
@@ -94,14 +94,13 @@ angular.module('aquarium.wash', [])
 
 
 
-                var time_mousse_top_or = 1000;
+                var time_mousse_top_or = 2000;
                 var time_mousse_top = time_mousse_top_or;
 
-                var time_vibration_or = 40;
+                var time_vibration_or = 150;
                 var time_vibration = time_vibration_or;
 
-                var time_phone_vibration_or = 40;
-                var time_phone_vibration = 0;
+                
                 var myVar;
                 var time_game = 20;
                 var timer_game;
@@ -221,7 +220,6 @@ angular.module('aquarium.wash', [])
                         return;
                     time_mousse_top = time_mousse_top - time_affichage;
                     time_vibration = time_vibration - time_affichage;
-                    time_phone_vibration = time_phone_vibration - time_affichage;
                     timer_annouce = timer_annouce - time_affichage;
 
                     if (timer_annouce < 100 && descending)
@@ -272,12 +270,6 @@ angular.module('aquarium.wash', [])
 
                     }
 
-                    if (time_phone_vibration < 0)
-                    {
-                        time_phone_vibration = time_phone_vibration_or;
-                        navigator.vibrate([100, 100, 100, 100]);
-
-                    }
                     if (time_mousse_top < 0)
                     {
                         if (i)
@@ -449,7 +441,7 @@ angular.module('aquarium.wash', [])
                              $scope.animation.showscore = true;
                              $scope.animation.score = nb_tour;
                             $scope.$digest();
-                            navigator.vibrate(500);
+                            navigator.vibrate(2000);
 
                             window.clearInterval(myVar);
                             musicController.playFinishSound();

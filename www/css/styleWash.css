@@ -53,10 +53,10 @@
 
 .moussetop {
 
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
    overflow: visible;
     width: 40vw;
     height: 40vw;
@@ -66,10 +66,10 @@
 }
 
 .moussetopup {
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
     width:65vw;
     height : 65vw;
    margin-left: 10%;
