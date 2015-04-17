@@ -1,10 +1,55 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 16 avr. 2015, 12:06:00
-    Author     : Charly
-*/
+.porte1 {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    width: 100vw;
+    height: 200vh;
+    position: absolute;
+    top: 0vw;
+}
 
+
+.porte2 {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    width: 100vw;
+    height: 200vh;
+    position:absolute;
+   top:-140vw;
+
+}
+
+.porte1movementin {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    top: 0vw;
+    
+}
+
+.porte2movementin {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s; 
+    top:-140vw;
+    
+}
+
+.porte1movementout {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    top: 150vw;
+}
+
+.porte2movementout {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    top:-300vw;
+}

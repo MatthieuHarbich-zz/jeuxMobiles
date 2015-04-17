@@ -20,6 +20,7 @@ angular.module('aquarium.music', [])
             var music_delicious;
             var music_devine;
             var music_sugar;
+            var stop = true;
 
             return {
                 loadMusic: function loadMusic()
@@ -156,6 +157,7 @@ angular.module('aquarium.music', [])
                     try {
                         musique.stop();
                         musique.play();
+                        stop =false;
                     }
                     catch (e)
                     {
@@ -174,6 +176,8 @@ angular.module('aquarium.music', [])
                 },
                 resumeAmbianceMusique: function resumeAmbianceMusique()
                 {
+                    if (!stop)
+                    {
                     try {
                         musique.play();
                     }
@@ -181,11 +185,13 @@ angular.module('aquarium.music', [])
                     {
 
                     }
+                }
                 },
                  stopAmbianceMusique: function stopAmbianceMusique()
                 {
                     try {
                         musique.stop();
+                        stop = true;
                     }
                     catch (e)
                     {

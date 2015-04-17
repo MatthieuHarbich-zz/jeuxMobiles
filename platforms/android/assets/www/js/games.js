@@ -7,7 +7,7 @@ angular.module('aquarium.games', [])
 
         })
 
-        .controller('gamesCtrl', function (HomeFactory, $window, $scope) {
+        .controller('gamesCtrl', function (HomeFactory, $window, $scope,musicController,$ionicPlatform) {
 
 
 
@@ -22,6 +22,13 @@ angular.module('aquarium.games', [])
             $scope.myStyle = {
                 "height": $scope.heightStyle
             };
+            
+            
+            $ionicPlatform.on('resume', function () {
+
+                    musicController.stopAmbianceMusique();
+                    
+                });
 
 
 

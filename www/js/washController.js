@@ -126,12 +126,20 @@ angular.module('aquarium.wash', [])
 
 
                 var paused = false;
-                var compteur_start = 0;
+                var compteur_start = -1;
                 var fondu = false;
 
                 function starterTimer() {
                     if (paused)
                         return;
+                    if (compteur_start == -1)
+                    {
+                        $scope.animation.port2out = true;
+                            $scope.animation.port1out = true;
+                            compteur_start++
+                    }
+                    else
+                    {
                     if (fondu)
                     {
                         $scope.animation.blnfondu = true;
@@ -182,6 +190,7 @@ angular.module('aquarium.wash', [])
 
                         compteur_start++;
                     }
+                }
                     $scope.$digest();
 
                 }
@@ -428,13 +437,19 @@ angular.module('aquarium.wash', [])
                             $state.go('app.games');
 
                         }
-                        if (count_finish == 3)
+                        if (count_finish == 5)
                         {
                             $scope.animation.blnfondu = false;
 
-                            $scope.animation.number = "FINISH!"
+                            $scope.animation.port2out = false;
+                            $scope.animation.port1out = false;
+                            $scope.animation.port1in = true;
+                            $scope.animation.port2in = true;
+                            $scope.animation.number = "FINISH!";
+                             $scope.animation.showscore = true;
+                             $scope.animation.score = nb_tour;
                             $scope.$digest();
-                            navigator.vibrate(500);
+                            navigator.vibrate(2000);
 
                             window.clearInterval(myVar);
                             musicController.playFinishSound();
@@ -450,7 +465,7 @@ angular.module('aquarium.wash', [])
                     }
                 }
 
-                var count_finish = 3;
+                var count_finish = 5;
 
                 $ionicPlatform.on('pause', function () {
                     navigator.vibrate(0);
@@ -464,6 +479,7 @@ angular.module('aquarium.wash', [])
 
                     }
                 });
+                
 
                 $ionicPlatform.on('resume', function () {
                     paused = false;
