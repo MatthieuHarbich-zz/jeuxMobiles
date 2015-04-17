@@ -16,21 +16,109 @@ angular.module('aquarium.auth', ['angular-storage'])
         store.remove('currentUserId');
         $rootScope.currentUserId = store.get('currentUserId');
 
+      },
+
+      postPhoto: function(imageData, callback){
+        
+         $http({
+              method: "POST",
+              url: "https://warm-bastion-3094.herokuapp.com/api/images",
+              headers: {
+                Authorization: "Bearer " + "Py7n9/utjzJmYotOoOPnPgmd+x+C8YP9AifhsquC8sVGDNiSEmskPNows5WXKEl6P5W9gBlROZIZl0+kj1iDAMyGnM+w4l75BRWij7rNLJIcHRA8QB2CUUpl5lMtbsOoTJobWO+P/J7oLyt/YGMHMLOqh70ylcr+eYQXYSanjrk=",
+                "Content-Type": "application/json"
+              },
+                data: {
+                data: imageData
+              }
+            }).success(function(data) {
+
+             
+              callback(null, data.url);
+              
+            }).error(function(data){
+                
+
+                //attention au callback
+            });
       }
+      
     };
 
     return service;
   })
 
-  .controller('LoginCtrl', function(apiUrl, AuthService, $http, $ionicHistory, $ionicLoading, $scope, $state) {
+.factory('CameraService', function($q){
+    return{
+      getPicture: function(options){
+        var deferred = $q.defer();
+
+        alert('get picture');
+        navigator.camera.getPicture(function(result){
+          
+          deferred.resolve(result);
+        }, function(err){
+         
+          deferred.reject(err);
+        }, options);
+
+        return deferred.promise;
+      }
+    }
+  })  
+
+  .controller('LoginCtrl', function(apiUrl,CameraService, AuthService, $http, $ionicHistory, $ionicLoading, $scope, $state) {
 
     // The $ionicView.beforeEnter event happens every time the screen is displayed.
-    $scope.$on('$ionicView.beforeEnter', function() {
+    
       // Re-initialize the user object every time the screen is displayed.
       // The first name and last name will be automatically filled from the form thanks to AngularJS's two-way binding.
       $scope.user = {};
-    });
+      $scope.users = {};
 
+     $scope.getPhoto = function() {
+          alert('in get photo')
+          CameraService.getPicture({
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false,
+            destinationType: navigator.camera.DestinationType.DATA_URL
+          }).then(function(imageData) {
+            alert(imageData);
+            $scope.imageData = imageData;
+            $http({
+              method: "post",
+              url: apiUrl + "/images",
+              headers: {
+                "Content-type": "application/json"
+              },
+              data: {
+                data: imageData
+              }
+            }).success(function(data) {
+              $scope.newIssue.photo = data.url;
+              alert(data);
+              $state.go('register');
+
+            }).error(function(error){
+
+              alert(error);
+
+
+            });
+          }, function(err) {
+            alert("erorr" + err);
+
+            $scope.error = err;
+          });
+
+        };
+    
+
+
+    $scope.moveToRegister = function(){
+      $state.go('register');
+    }
     // Add the register function to the scope.
     $scope.register = function() {
 
@@ -84,6 +172,31 @@ angular.module('aquarium.auth', ['angular-storage'])
       console.log('logout');
       $state.go('login');
     };
+
+    
+  })
+
+  .controller('registerCtrl', function(CameraService, AuthService, $scope, $state) {
+    
+     $scope.$on('$ionicView.beforeEnter', function(){
+        
+      })
+
+     
+    
+      if (navigator.camera) {
+                   CameraService.getPicture({
+                    quality: 75,
+                    targetWidth: 400,
+                    targetHeight: 300,
+                    destinationType: Camera.DestinationType.DATA_URL
+                    }).then(function(imageData) {
+                        
+
+                       
+                    });
+                  }
+   
 
     
   })

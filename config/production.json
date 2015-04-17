@@ -1,8 +1,4 @@
 {
-  "apiUrl": "https://citizen-engagement.herokuapp.com/api",
-  "mapboxMapId": "matthieuharbich.lfdcmadl",
-  "mapboxAccessToken": "pk.eyJ1IjoibWF0dGhpZXVoYXJiaWNoIiwiYSI6IkpvdUFfN0UifQ.fKIfTr12DZB7bLg7zT56Sg",
-  "qimgUrl": "https://warm-bastion-3094.herokuapp.com/api",
-  "qimgToken": "Py7n9/utjzJmYotOoOPnPgmd+x+C8YP9AifhsquC8sVGDNiSEmskPNows5WXKEl6P5W9gBlROZIZl0+kj1iDAMyGnM+w4l75BRWij7rNLJIcHRA8QB2CUUpl5lMtbsOoTJobWO+P/J7oLyt/YGMHMLOqh70ylcr+eYQXYSanjrk="
+  "apiUrl": "https://pfouah2015.herokuapp.com/api"  
 
 }

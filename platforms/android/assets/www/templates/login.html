@@ -1,0 +1,21 @@
+<ion-view class="login"  view-title="aquarium">
+  <ion-content class="padding login">
+		
+		<img src="img/goutte.png" alt="">
+	   <div  id="loginForm" class="">
+		  
+		    <input type="text" placeholder="First Name">		  
+		    <input type="text" placeholder="Last Name">
+	  	  
+		</div>
+		<button id="buttonLogin" ng-click="login()" class="button buttonLogin button-block button-positive">
+  			Login
+		</button>
+		<button id="buttonLogin" ng-click="getPhoto()"class="button buttonLogin button-block button-assertive">
+  			Register
+		</button>
+
+		<div ng-repeat="user in users">{{user}}</div>
+
+  </ion-content>
+</ion-view>
