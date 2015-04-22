@@ -23,21 +23,14 @@ angular.module('aquarium.wash', [])
         .controller('washCtrl', function ($ionicHistory, $sce, $state, $window, $scope, $ionicPopup, $ionicPlatform, musicController) {
 
 
-            function replacementForAndroid(url)
-            {
-                if (ionic.Platform.device().platform.toLowerCase() === "android")
-                {
-                    url = "/android_asset/www/" + url;
-                }
-                return url;
-            }
+            var descending = false;
 
 
             function specialText(star)
             {
                 descending = true;
 
-                var string_rate = ["Sweet", "Tasty", "Delicious", "Divine", "SugarCrush"];
+               var string_rate = ["Grouille", "Plus vite", "Joli", "Top", "TopScorer"];
 
                 var toAdd = '<img class="starImg" src="./img/star.png" alt="">';
                 var string = '';
@@ -82,7 +75,7 @@ angular.module('aquarium.wash', [])
                 var mid = 0;
 
 
-                var time_affichage = 20;
+                var time_affichage = 200;
                 var time_capteur = 20;
 
                 var compteur = 0;
@@ -94,14 +87,13 @@ angular.module('aquarium.wash', [])
 
 
 
-                var time_mousse_top_or = 1000;
+                var time_mousse_top_or = 2000;
                 var time_mousse_top = time_mousse_top_or;
 
-                var time_vibration_or = 40;
+                var time_vibration_or = 150;
                 var time_vibration = time_vibration_or;
 
-                var time_phone_vibration_or = 40;
-                var time_phone_vibration = 0;
+
                 var myVar;
                 var time_game = 20;
                 var timer_game;
@@ -126,61 +118,57 @@ angular.module('aquarium.wash', [])
 
 
                 var paused = false;
-                var compteur_start = 0;
+                var compteur_start = -1;
                 var fondu = false;
 
                 function starterTimer() {
                     if (paused)
                         return;
-                    if (fondu)
+                    if (compteur_start == -1)
                     {
-                        $scope.animation.blnfondu = true;
-                        $scope.animation.blnRotationIndicator = true;
-                        $scope.animation.blntextBounce = true;
-                        fondu = false;
+                        $scope.animation.port2out = true;
+                        $scope.animation.port1out = true;
+                        compteur_start++
                     }
                     else
                     {
-                        navigator.vibrate(500);
-                        if (compteur_start == 0)
+                        if (fondu)
                         {
-                            try
+                            $scope.animation.blnfondu = true;
+                            $scope.animation.blnRotationIndicator = true;
+                            $scope.animation.blntextBounce = true;
+                            fondu = false;
+                        }
+                        else
+                        {
+                            navigator.vibrate(500);
+                            
+                            if (compteur_start == 1)
                             {
                                 musicController.playCountDownMusic();
-                                //areYouReady.play();
                             }
-                            catch (e)
+                            
+                            $scope.animation.blnfondu = false;
+                            $scope.animation.blnRotationIndicator = false;
+                            $scope.animation.blntextBounce = false;
+                            fondu = true;
+                            $scope.animation.number = string_text[compteur_start];
+                            if (compteur_start == 4)
                             {
 
-                            }
-                        }
-                        $scope.animation.blnfondu = false;
-                        $scope.animation.blnRotationIndicator = false;
-                        $scope.animation.blntextBounce = false;
-                        fondu = true;
-                        $scope.animation.number = string_text[compteur_start];
-                        if (compteur_start == 4)
-                        {
-
-                            try {
-                                musicController.stopCountDownMusic();
+                               
+                                $scope.animation.blnHideIndicator = true;
+                                start();
 
                             }
-                            catch (e)
+                            if (compteur_start > 4)
                             {
-
+                                $scope.animation.number = "";
+                                window.clearInterval(starter);
                             }
-                            $scope.animation.blnHideIndicator = true;
-                            start();
 
+                            compteur_start++;
                         }
-                        if (compteur_start > 4)
-                        {
-                            $scope.animation.number = "";
-                            window.clearInterval(starter);
-                        }
-
-                        compteur_start++;
                     }
                     $scope.$digest();
 
@@ -198,6 +186,7 @@ angular.module('aquarium.wash', [])
 
                     try {
                         watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+                        watchAcceleration = navigator.accelerometer.watchAcceleration(onAcceleration, onAccelerationError, options);
                     }
                     catch (e)
                     {
@@ -206,13 +195,12 @@ angular.module('aquarium.wash', [])
                 }
 
 
-                var descending = false;
+                
                 function animator() {
                     if (paused)
                         return;
                     time_mousse_top = time_mousse_top - time_affichage;
                     time_vibration = time_vibration - time_affichage;
-                    time_phone_vibration = time_phone_vibration - time_affichage;
                     timer_annouce = timer_annouce - time_affichage;
 
                     if (timer_annouce < 100 && descending)
@@ -225,32 +213,32 @@ angular.module('aquarium.wash', [])
                     {
 
 
-                        if (numb_tour_during_time == 2)
+                        if (numb_tour_during_time < 2)
                         {
                             specialText(1);
 
                         }
                         else
                         {
-                            if (numb_tour_during_time == 3)
+                            if (numb_tour_during_time < 4)
                             {
                                 specialText(2);
                             }
                             else
                             {
-                                if (numb_tour_during_time == 4)
+                                if (numb_tour_during_time < 6)
                                 {
                                     specialText(3);
                                 }
                                 else
                                 {
-                                    if (numb_tour_during_time == 5)
+                                    if (numb_tour_during_time < 8)
                                     {
                                         specialText(4);
                                     }
                                     else
                                     {
-                                        if (numb_tour_during_time > 5)
+                                        if (numb_tour_during_time > 8)
                                         {
                                             specialText(5);
                                         }
@@ -263,12 +251,6 @@ angular.module('aquarium.wash', [])
 
                     }
 
-                    if (time_phone_vibration < 0)
-                    {
-                        time_phone_vibration = time_phone_vibration_or;
-                        navigator.vibrate([100, 100, 100, 100]);
-
-                    }
                     if (time_mousse_top < 0)
                     {
                         if (i)
@@ -305,10 +287,10 @@ angular.module('aquarium.wash', [])
                         time_vibration = time_vibration_or;
                     }
 
-                    
-                        $scope.animation.rotation = parseInt(actual_ori);
-                        
-                    
+
+                    $scope.animation.rotation = parseInt(actual_ori);
+
+
                     $scope.animation.timershow = time_game + " s";
                     $scope.animation.numbershow = nb_tour + " t";
 
@@ -319,38 +301,41 @@ angular.module('aquarium.wash', [])
                     $scope.$digest();
                 }
 
-              var to_make = 360;
-              var difference;
-              
+                var to_make = 360;
+                var difference;
+
                 function onSuccess(heading) {
 
                     actual_ori = heading.trueHeading;
+
+
                     if (first)
                     {
                         ancient = actual_ori;
                         first = false;
                     }
-                    
+
                     difference = Math.abs(actual_ori - ancient);
-                    
-                    
+
+
                     if (actual_ori > 270 && ancient < 90)
                     {
-                        difference = 360-actual_ori + ancient;
+                        difference = 360 - actual_ori + ancient;
                     }
-                    
+
                     if (actual_ori < 90 && ancient > 270)
                     {
-                        difference = 360-ancient + actual_ori;
+                        difference = 360 - ancient + actual_ori;
                     }
-                    
+
                     to_make = to_make - difference;
-                    
-                    
+
+
                     if (to_make < 1)
                     {
-                        to_make = 360 + to_make;                   
+                        to_make = 360 + to_make;
                         musicController.playGongSound();
+                        navigator.vibrate(200);
                         numb_tour_during_time++;
                         nb_tour++;
                     }
@@ -360,7 +345,7 @@ angular.module('aquarium.wash', [])
 
                     //$scope.user.orientation = $compteur;
 
-                    
+
                 }
                 ;
 
@@ -408,6 +393,11 @@ angular.module('aquarium.wash', [])
                     {
                         $scope.animation.blnHideIndicator = true;
                     }
+                    if (time_game == 3)
+                    {
+
+                        musicController.playFinishSound();
+                    }
                     if (time_game < 0)
                     {
 
@@ -428,18 +418,25 @@ angular.module('aquarium.wash', [])
                             $state.go('app.games');
 
                         }
-                        if (count_finish == 3)
+                        
+                        if (count_finish == 5)
                         {
                             $scope.animation.blnfondu = false;
 
-                            $scope.animation.number = "FINISH!"
+                            $scope.animation.port2out = false;
+                            $scope.animation.port1out = false;
+                            $scope.animation.port1in = true;
+                            $scope.animation.port2in = true;
+                            $scope.animation.number = "";
+                            $scope.animation.showscore = true;
+                            $scope.animation.score = nb_tour;
                             $scope.$digest();
-                            navigator.vibrate(500);
+                            navigator.vibrate(2000);
 
                             window.clearInterval(myVar);
-                            musicController.playFinishSound();
                             try {
                                 navigator.compass.clearWatch(watchID);
+                                navigator.accelerometer.clearWatch(watchAcceleration);
                             } catch (e)
                             {
 
@@ -450,7 +447,7 @@ angular.module('aquarium.wash', [])
                     }
                 }
 
-                var count_finish = 3;
+                var count_finish = 5;
 
                 $ionicPlatform.on('pause', function () {
                     navigator.vibrate(0);
@@ -459,11 +456,13 @@ angular.module('aquarium.wash', [])
                     try {
 
                         navigator.compass.clearWatch(watchID);
+                        navigator.accelerometer.clearWatch(watchAcceleration);
                     } catch (e)
                     {
 
                     }
                 });
+
 
                 $ionicPlatform.on('resume', function () {
                     paused = false;
@@ -472,6 +471,7 @@ angular.module('aquarium.wash', [])
                     try {
 
                         watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+                        watchAcceleration = navigator.accelerometer.watchAcceleration(onAcceleration, onAccelerationError, options);
                     } catch (e)
                     {
 
@@ -488,6 +488,7 @@ angular.module('aquarium.wash', [])
                             try {
 
                                 navigator.compass.clearWatch(watchID);
+                                navigator.accelerometer.clearWatch(watchAcceleration);
                             } catch (e)
                             {
 
@@ -500,8 +501,63 @@ angular.module('aquarium.wash', [])
                  $scope.user.orientation = $compteur;
                  console.log($compteur);
                  });**/
+                var watchAcceleration;
+
+                var y;
+                var detection = 20;
+                var number = 0;
+                var detect_neg = -detection;
+
+                function onAcceleration(acceleration) {
+                    y = acceleration.y;
+//                    alert('Acceleration X: ' + acceleration.x + '\n' +
+//                            'Acceleration Y: ' + acceleration.y + '\n' +
+//                            'Acceleration Z: ' + acceleration.z + '\n' +
+//                            'Timestamp: ' + acceleration.timestamp + '\n');
+
+                    if (y > detection)
+                    {
+                        number++;
+                        if (number > 2)
+                        {
+                            musicController.playGongSound();
+                            navigator.vibrate(200);
+                            numb_tour_during_time++;
+                            nb_tour++;
+                        }
+                    }
+                    else
+                    {
+                        number = 0;
+                    }
+                    
+                    if (y < detect_neg)
+                    {
+                        number++;
+                        if (number > 2)
+                        {
+                            musicController.playGongSound();
+                            navigator.vibrate(200);
+                            numb_tour_during_time++;
+                            nb_tour++;
+                        }
+                    }
+                    else
+                    {
+                        number = 0;
+                    }
+
+                }
+                ;
+
+                function onAccelerationError() {
+                    alert('onError!');
+                }
+                ;
 
             });
+
+
 
 
 

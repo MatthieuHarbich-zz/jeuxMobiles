@@ -1,10 +1,283 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 16 avr. 2015, 12:06:00
-    Author     : Charly
-*/
+.porte1 {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    width: 100vw;
+    height: 200vh;
+    position: absolute;
+    top: 0vw;
+}
+
+
+.porte2 {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    width: 100vw;
+    height: 200vh;
+    position:absolute;
+    top:-140vw;
+
+}
+
+.porte1movementin {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    top: 0vw;
+
+}
+
+.porte2movementin {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s; 
+    top:-140vw;
+
+}
+
+.porte1movementout {
+    -moz-transition: all 4s;
+    -webkit-transition: all 4s;
+    -o-transition: all 4s;
+    transition: all 4s;
+    top: 150vw;
+}
+
+.porte2movementout {
+    -moz-transition: all 4s;
+    -webkit-transition: all 4s;
+    -o-transition: all 4s;
+    transition: all 4s;
+    top:-300vw;
+}
+
+.toilette {
+    width: 85vw;
+    height: 125vw;
+    position: relative;
+
+    margin-left: 7%;
+    text-align : center;
+    margin-top: 20vw;
+}
+
+.eaufond {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 70%;
+}
+
+.eauopening {
+    position:absolute;
+    width:39vw;
+    height: 55vw;
+    
+    top:57vw;
+    left: 30%;
+}
+
+.eauopening_bottom {
+    -ms-transform: scale(0.0, 0.0); /* IE 9 */
+    -webkit-transform: scale(0.0, 0.0); /* Chrome, Safari, Opera */
+    -o-transform : scale(0.0, 0.0);
+    transform: scale(0.0, 0.0);
+}
+
+.porte1flash {
+        background-color: #89CE9A;
+}
+
+.porte2flash {
+        background-color: #89CE9A;
+}
+
+.eauopening img {
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    
+    width:100%;
+    height:100%;
+}
+
+.eaufond img {
+      -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    width: 100%;
+  
+    height: 100%;
+}
+
+.eaufond_animation {
+      -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    -webkit-transform: scale(0.8, 0.8); /* Chrome, Safari, Opera */
+    -o-transform : scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+}
+
+.eaucoule {
+    width:39vw;
+    height: 51vw;
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 48%;
+    visibility: hidden;
+
+}
+
+.eaucoule_animation {
+    visibility: visible;
+    transition: all 3s;
+
+    -ms-transform: scale(0.0, 0.0); /* IE 9 */
+    -webkit-transform: scale(0.0, 0.0); /* Chrome, Safari, Opera */
+    -o-transform : scale(0.0, 0.0);
+    transform: scale(0.0, 0.0);
+}
+
+.caca1 {
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 85vw;
+    left: 52vw;
+
+}
+
+.caca1_animation {
+    -moz-transition: all 60s;
+    -webkit-transition: all 60s;
+    -o-transition: all 60s;
+    transition: all 60s;
+    -ms-transform: rotate(360deg) scale(0.0, 0.0); /* IE 9 */
+    -webkit-transform: rotate(360deg) scale(0.0, 0.0); /* Chrome, Safari, Opera */
+    -o-transform : rotate(360deg) scale(0.0, 0.0);
+    transform: rotate(360deg) scale(0.0, 0.0);
+}
+
+.caca2_animation {
+    transition: all 60s;
+    transform: rotate(500deg);
+    -ms-transform: rotate(500deg); /* IE 9 */
+    -webkit-transform: rotate(500deg); /* Chrome, Safari, Opera */
+    -o-transform : rotate(500deg);
+    transform: rotate(500deg);
+    width: 12vw;
+    height: 12vw;
+    margin-left: 10%;
+}
+
+.caca3_animation {
+
+
+    transition: all 60s;
+    margin-right: 5%;
+
+    -ms-transform: rotate(1000deg); /* IE 9 */
+    -webkit-transform: rotate(1000deg); /* Chrome, Safari, Opera */
+    -o-transform : rotate(1000deg);
+    transform: rotate(1000deg);
+    width: 12vw;
+    height: 12vw;
+}
+
+.caca2 {
+
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 90vw;
+    left: 45vw;
+
+}
+
+.caca3 {
+
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 78vw;
+    left: 43vw;
+
+}
+
+.cacouille img {
+    width: 100%;
+    height: 100%;
+}
+
+.timer_show_flash
+{
+
+    position:absolute;
+    top: 5%;
+    right: 10%;
+    width: 100%;
+    text-align: right;
+    font-size: 15vw;
+    display: inline-block;
+    color: white;
+}
+
+.number_show_flash
+{
+
+    position:absolute;
+    top: 5%;
+    left: 15%;
+    width: 100%;
+    text-align: left;
+    font-size: 15vw;
+    color: white;
+}
+
+.indication_flash
+{
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    text-align: center;
+    position:absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.movementTapeFlash
+{
+    transition: all 0.5s;
+    -ms-transform: scale(1.2, 1.2); /* IE 9 */
+    -webkit-transform: scale(1.2, 1.2); /* Chrome, Safari, Opera */
+    -o-transform : scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+
+
+}
+
+.indication_flash img{
+    transition: all 0.5s;
+    width: 30vw;
+    height: 30vw;
+    margin-bottom: 3vw;
+    margin-left: 6vw;
+    margin-top: 3vw;
+}
+
+.toilette img {
+    width: 100%;
+    height: 100%;
+}
 

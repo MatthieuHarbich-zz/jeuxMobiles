@@ -21,7 +21,7 @@
 
 
         </div>
-        <div class ="starterkit" ng-class="{'starterkitfondu':animation.blnfondu}"><p>{{animation.number}}</p></div>
+        
 <div class="star" ng-class="{'stardescending':animation.stardescending}">
              <p>{{animation.godlike}}</p>
             <div  ng-bind-html="animation.starsystem">
@@ -31,5 +31,12 @@
             
             
         </div>
+        
+        
+        <div class="porte1 porte1wash" ng-class="{'porte1movementout':animation.port1out, 'porte1movementin':animation.port1in}"></div>
+      <div class="porte2 porte2wash" ng-class="{'porte2movementin':animation.port2in,'porte2movementout':animation.port2out}"></div>
+       <div class ="starterkit" ng-class="{'starterkitfondu':animation.blnfondu}"><p>{{animation.number}}</p></div>
+       <div class ="score" ng-class="{'showScore':animation.showscore}"><p>Your Score:</p>
+           <p>{{animation.score}}</p></div>
     </ion-content>
 </ion-view>
