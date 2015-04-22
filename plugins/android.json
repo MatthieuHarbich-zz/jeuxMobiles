@@ -19,8 +19,10 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
-<<<<<<< HEAD
-=======
+                        },
+                        {
+                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
+                            "count": 1
                         },
                         {
                             "xml": "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>",
@@ -37,11 +39,6 @@
                         {
                             "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
-                            "count": 1
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
                         }
                     ]
                 }
@@ -51,8 +48,6 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-<<<<<<< HEAD
-=======
                             "count": 3
                         },
                         {
@@ -79,7 +74,6 @@
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
                             "count": 1
                         }
                     ]
@@ -99,8 +93,9 @@
         },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.ionicframework.citizenengagement635710"
-<<<<<<< HEAD
-=======
+        },
+        "org.apache.cordova.device-motion": {
+            "PACKAGE_NAME": "com.ionicframework.citizenengagement635710"
         },
         "org.apache.cordova.device-orientation": {
             "PACKAGE_NAME": "com.ionicframework.citizenengagement635710"
@@ -113,10 +108,6 @@
         },
         "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "com.ionicframework.citizenengagement635710"
-        },
-        "org.apache.cordova.device-motion": {
-            "PACKAGE_NAME": "com.ionicframework.citizenengagement635710"
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
         }
     },
     "dependent_plugins": {}

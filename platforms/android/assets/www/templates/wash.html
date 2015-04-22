@@ -1,15 +1,7 @@
 <ion-view class="wash" view-title="Wash">
-<<<<<<< HEAD
-  <ion-content id="wash" scroll="false">     
-		
-  </ion-content>
-=======
     <ion-content id="wash" scroll="false">     
         <div class ="timer_show">{{animation.timershow}}</div>
-        <div class ="indication" ng-class="{'hideIndication':animation.blnHideIndicator}">
-            <img src="./img/indicationWashmachine.png"  alt="" ng-class="{'rotationIndicator':animation.blnRotationIndicator}">
-            <div class = "textindicator"><p ng-class="{'textBounce':animation.blntextBounce}">Rotate your phone !</p></div>
-        </div>
+       
         <div class ="number_show">{{animation.numbershow}}</div>
         
         
@@ -22,9 +14,14 @@
             <div class ="tumbler" rotate degrees="animation.rotation">
                 <img src="./img/tumbler.png"  alt="">
             </div>
-           
 
 
+        </div>
+        
+                   
+ <div class ="indication" ng-class="{'hideIndication':animation.blnHideIndicator}">
+            <img src="./img/indicationWashmachine.png"  alt="" ng-class="{'rotationIndicator':animation.blnRotationIndicator}">
+            <div class = "textindicator"><p ng-class="{'textBounce':animation.blntextBounce}">Rotate your phone !</p></div>
         </div>
         
 <div class="star" ng-class="{'stardescending':animation.stardescending}">
@@ -44,5 +41,4 @@
        <div class ="score" ng-class="{'showScore':animation.showscore}"><p>Your Score:</p>
            <p>{{animation.score}}</p></div>
     </ion-content>
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
 </ion-view>

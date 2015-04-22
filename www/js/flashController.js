@@ -29,19 +29,47 @@ angular.module('aquarium.flash', [])
                 }
             }
         })
-        .controller('flashCtrl', function ($sce,HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
+        .controller('flashCtrl', function ($rootScope, $http, store, apiUrl, $sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
             $scope.compass = {};
             $scope.animation = {};
             var count_tape = 0;
             var numb_tour_during_time = 0;
 
-           var descending = false;
-           
+            var descending = false;
 
 
+            function send_score(score_to_send)
+            {
+                $rootScope.lastScore = score_to_send;
+                $http({
+                    method: "POST",
+                    url: apiUrl + "/scores",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        salt: store.get('currentUserSalt')
+                    },
+                    data:
+                            {
+                                user: store.get('currentUserId'),
+                                pts: score_to_send.toString(),
+                                gameName: "wash"
+                            }
+
+                }).success(function (data) {
+
+                    console.log("Ok!");
+
+
+                }).error(function (data) {
+
+                    console.log(data);
+                    console.log(score_to_send);
+                    //attention au callback
+                });
+            }
             function specialText(star)
             {
-                
+
                 descending = true;
 
                 var string_rate = ["Grouille", "Plus vite", "Joli", "Top", "TopScorer"];
@@ -58,8 +86,8 @@ angular.module('aquarium.flash', [])
                 musicController.playWowSound(star - 1);
 
             }
-            
-             $scope.onTape = function () {
+
+            $scope.onTape = function () {
                 count_tape++;
                 numb_tour_during_time++;
                 musicController.playGongSound();
@@ -92,9 +120,9 @@ angular.module('aquarium.flash', [])
                         return;
                     if (compteur_start == -1)
                     {
-                         $scope.animation.port2out = true;
+                        $scope.animation.port2out = true;
                         $scope.animation.port1out = true;
-                          musicController.playFlashEffect();
+                        musicController.playFlashEffect();
                         compteur_start++;
                     }
                     else
@@ -113,7 +141,7 @@ angular.module('aquarium.flash', [])
                             {
                                 try
                                 {
-                                    
+
                                     //areYouReady.play();
                                 }
                                 catch (e)
@@ -133,7 +161,7 @@ angular.module('aquarium.flash', [])
                             if (compteur_start == 4)
                             {
 
-                                
+
                                 $scope.animation.openingbottom = true;
                                 musicController.playFlashEffect();
                                 $scope.animation.blnHideIndicator = true;
@@ -171,12 +199,12 @@ angular.module('aquarium.flash', [])
                 }
                 var timer_annouce_or = 5000;
                 var timer_annouce = timer_annouce_or;
-              
+
                 var time_eau_coule_or = 2000;
                 var time_eau_coule = time_eau_coule_or;
                 var time_eau_bouge_or = 2000;
                 var time_eau_bouge = time_eau_bouge_or;
-                
+
 
                 function animator() {
                     if (paused)
@@ -194,26 +222,26 @@ angular.module('aquarium.flash', [])
                     else
                     {
                         $scope.animation.eaufond = true;
-                        
+
                     }
-                    
-                    if (time_eau_bouge<0)
+
+                    if (time_eau_bouge < 0)
                     {
                         time_eau_bouge = time_eau_bouge_or;
                     }
-                    
+
                     timer_annouce = timer_annouce - time_affichage;
                     time_eau_coule = time_eau_coule - time_affichage;
-                    time_eau_bouge  = time_eau_bouge - time_affichage;
+                    time_eau_bouge = time_eau_bouge - time_affichage;
                     if (time_eau_coule < 0)
                     {
                         $scope.animation.eaucoule = true;
                         time_eau_coule = time_eau_coule_or;
                         musicController.playFlashEffect();
-                        
+
                     }
-                    
-                    
+
+
 
                     if (timer_annouce < 100 && descending)
                     {
@@ -300,10 +328,10 @@ angular.module('aquarium.flash', [])
                         $scope.animation.caca1 = true;
                         $scope.animation.caca2 = true;
                         $scope.animation.caca3 = true;
-                        
+
                     }
                     time_game--;
-                    
+
 
                     if (count_tape == 0 && time_game < 18)
                     {
@@ -326,16 +354,16 @@ angular.module('aquarium.flash', [])
                     {
                         $scope.animation.blnHideIndicator = true;
                     }
-                    
+
                     if (time_game == 3)
                     {
-                         musicController.playFlashEffect();
+                        musicController.playFlashEffect();
                         $scope.animation.openingbottom = false;
                         musicController.playFinishSound();
                     }
                     if (time_game < 0)
                     {
-                        
+
                         if (count_finish == 0)
                         {
                             navigator.vibrate(0);
@@ -349,36 +377,37 @@ angular.module('aquarium.flash', [])
                         }
                         if (count_finish == 5)
                         {
-                             musicController.playFlashEffect();
+                            musicController.playFlashEffect();
                             $scope.animation.opening = false;
                             $scope.animation.blnfondu = false;
-  $scope.animation.port2out = false;
+                            $scope.animation.port2out = false;
                             $scope.animation.port1out = false;
                             $scope.animation.port1in = true;
                             $scope.animation.port2in = true;
-                           
+
                             $scope.animation.number = "";
                             $scope.animation.showscore = true;
                             $scope.animation.score = count_tape;
+                            send_score(count_tape);
                             $scope.$digest();
                             navigator.vibrate(2000);
 
                             window.clearInterval(timer_animator);
-                            
+
 
                         }
                         count_finish--;
 
                     }
                 }
-                
-                
+
+
                 $ionicPlatform.on('pause', function () {
                     navigator.vibrate(0);
                     paused = true;
                     musicController.pauseAmbianceMusique();
-                   
-                   
+
+
                 });
 
 
@@ -386,7 +415,7 @@ angular.module('aquarium.flash', [])
                     paused = false;
                     navigator.vibrate(0);
                     musicController.resumeAmbianceMusique();
-                    
+
                 });
 
                 $scope.$on('$stateChangeStart',
@@ -396,7 +425,7 @@ angular.module('aquarium.flash', [])
                             window.clearInterval(starter);
                             window.clearInterval(timer_game);
                             musicController.stopAmbianceMusique();
-                           
+
 
                         });
 

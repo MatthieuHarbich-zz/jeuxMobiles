@@ -1,20 +1,22 @@
 <ion-view class="Register" view-title="aquarium">
-  <ion-content class="padding login">
+  <ion-content  ng-controller="LoginCtrl" class="padding login">
 		
-		<img src="img/profil.png" alt="">
+		
+		<div class="registerImage" ng-style="{'background-image':'url(http://pfouah2015.herokuapp.com/api/images/{{image.imageId}})'}"> ></div>
+		
 		<div id="registerForm" class="list">
 		  
 		    
-		    <input type="text" placeholder="Pseuedo pleeaaase...">
+		    <input type="text" ng-model="newPseuedo" placeholder="Pseuedo pleeaaase...">
 		  
 		    
-		    <input type="email" placeholder="jean.bon@heig-vd.ch">
+		    <input type="email" ng-model="newEmail" placeholder="jean.bon@heig-vd.ch">
 		  
 		   
-		    <input type="password" placeholder="password">
+		    <input type="password" ng-model="newPassword" placeholder="password">
 		 
 		</div>
-		<button id="buttonLogin" ng-click="signUp()"class="button buttonLogin button-block button-assertive">
+		<button id="buttonLogin" ng-click="newUser(newPseuedo, newEmail, newPassword, image.imageId)"class="button buttonLogin button-block button-assertive">
   			Inscris toi!!
 		</button>
 

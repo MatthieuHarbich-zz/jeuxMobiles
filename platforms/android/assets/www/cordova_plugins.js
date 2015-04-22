@@ -41,8 +41,20 @@ module.exports = [
         "clobbers": [
             "device"
         ]
-<<<<<<< HEAD
-=======
+    },
+    {
+        "file": "plugins/org.apache.cordova.device-motion/www/Acceleration.js",
+        "id": "org.apache.cordova.device-motion.Acceleration",
+        "clobbers": [
+            "Acceleration"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.device-motion/www/accelerometer.js",
+        "id": "org.apache.cordova.device-motion.accelerometer",
+        "clobbers": [
+            "navigator.accelerometer"
+        ]
     },
     {
         "file": "plugins/org.apache.cordova.device-orientation/www/CompassError.js",
@@ -232,21 +244,6 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.device-motion/www/Acceleration.js",
-        "id": "org.apache.cordova.device-motion.Acceleration",
-        "clobbers": [
-            "Acceleration"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.device-motion/www/accelerometer.js",
-        "id": "org.apache.cordova.device-motion.accelerometer",
-        "clobbers": [
-            "navigator.accelerometer"
-        ]
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
     }
 ];
 module.exports.metadata = 
@@ -255,16 +252,12 @@ module.exports.metadata =
     "com.ionic.keyboard": "1.0.4",
     "org.apache.cordova.camera": "0.3.6",
     "org.apache.cordova.console": "0.2.13",
-<<<<<<< HEAD
-    "org.apache.cordova.device": "0.3.0"
-=======
     "org.apache.cordova.device": "0.3.0",
+    "org.apache.cordova.device-motion": "0.2.11",
     "org.apache.cordova.device-orientation": "0.3.11",
     "org.apache.cordova.file": "1.3.3",
     "org.apache.cordova.media": "0.2.16",
-    "org.apache.cordova.vibration": "0.3.13",
-    "org.apache.cordova.device-motion": "0.2.11"
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
+    "org.apache.cordova.vibration": "0.3.13"
 }
 // BOTTOM OF METADATA
 });

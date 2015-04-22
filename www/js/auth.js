@@ -100,6 +100,11 @@ angular.module('aquarium.auth', ['angular-storage'])
               $rootScope.user = data.user;
               $rootScope.userScore = data.scores;
               AuthService.setUser(data);
+              $ionicLoading.hide();
+              $ionicHistory.nextViewOptions({
+		    disableBack: true,
+		    historyRoot: true
+		});
               $state.go('app.home');
               console.log(data);
 
@@ -107,6 +112,7 @@ angular.module('aquarium.auth', ['angular-storage'])
               
             }).error(function(data){
                 console.log(data);
+                $ionicLoading.hide();
                 alert('Probleme d authentification');
                 //attention au callback
             });
@@ -117,6 +123,10 @@ angular.module('aquarium.auth', ['angular-storage'])
 
      $scope.newUser = function(pseuedo, email, password, imgId){
       alert(imgId);
+      $ionicLoading.show({
+	    template: 'Register in...',
+	    delay: 750
+	});
       $http({
               method: "POST",
               url: apiUrl + "/users",
@@ -129,7 +139,7 @@ angular.module('aquarium.auth', ['angular-storage'])
               }
               
             }).success(function(data) {
-
+                $ionicLoading.hide();
               console.log(data);
               $rootScope.newUser = data;
               console.log('lig');
@@ -140,7 +150,7 @@ angular.module('aquarium.auth', ['angular-storage'])
 
               
             }).error(function(data){
-                
+                $ionicLoading.hide();
                 alert('Probleme d authentification');
                 //attention au callback
             });
