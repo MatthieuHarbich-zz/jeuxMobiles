@@ -32,6 +32,8 @@ angular.module('aquarium', ['ionic', 'timer', 'aquarium.auth', 'aquarium.constan
     };
 
     
+
+    
   });
 })
 
@@ -142,7 +144,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
   
   $urlRouterProvider.otherwise(function($injector) {
-    $injector.get('$state').go('login'); 
+    $injector.get('$state').go('app.home'); 
   });
 
 
