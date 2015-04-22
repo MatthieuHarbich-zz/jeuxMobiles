@@ -90,7 +90,7 @@ angular.module('aquarium.trash', [])
             {
                 descending = true;
 
-                var string_rate = ["Sweet", "Tasty", "Delicious", "Divine", "SugarCrush"];
+                 var string_rate = ["Grouille", "Plus vite", "Joli", "Top", "TopScorer"];
 
                 var toAdd = '<img class="starImg" src="./img/star.png" alt="">';
                 var string = '';
@@ -139,32 +139,32 @@ angular.module('aquarium.trash', [])
                     {
 
 
-                        if (numb_tour_during_time == 2)
+                        if (numb_tour_during_time < 3)
                         {
                             specialText(1);
 
                         }
                         else
                         {
-                            if (numb_tour_during_time == 3)
+                            if (numb_tour_during_time < 8)
                             {
                                 specialText(2);
                             }
                             else
                             {
-                                if (numb_tour_during_time == 4)
+                                if (numb_tour_during_time < 13)
                                 {
                                     specialText(3);
                                 }
                                 else
                                 {
-                                    if (numb_tour_during_time == 5)
+                                    if (numb_tour_during_time < 18)
                                     {
                                         specialText(4);
                                     }
                                     else
                                     {
-                                        if (numb_tour_during_time > 5)
+                                        if (numb_tour_during_time > 23)
                                         {
                                             specialText(5);
                                         }
@@ -182,6 +182,8 @@ angular.module('aquarium.trash', [])
                     sac3_vh += add;
                     if (sac1_vh > 100)
                     {
+                        navigator.vibrate(200);
+                        musicController.playGongSound();
                         comptor_sac++;
                         numb_tour_during_time++;
                         sac1_vh = -50 + (sac1_vh - 100);
@@ -190,6 +192,8 @@ angular.module('aquarium.trash', [])
                     if (sac2_vh > 100)
 
                     {
+                        navigator.vibrate(200);
+                        musicController.playGongSound();
                         comptor_sac++;
                         numb_tour_during_time++;
                         sac2_vh = -50 + (sac2_vh - 100);
@@ -197,6 +201,8 @@ angular.module('aquarium.trash', [])
 
                     if (sac3_vh > 100)
                     {
+                        navigator.vibrate(200);
+                        musicController.playGongSound();
                         comptor_sac++;
                         numb_tour_during_time++;
                         sac3_vh = -50 + (sac3_vh - 100);
@@ -248,7 +254,7 @@ angular.module('aquarium.trash', [])
                         else
                         {
                             navigator.vibrate(500);
-                            if (compteur_start == 0)
+                            if (compteur_start == 1)
                             {
 
                                 musicController.playCountDownMusic();
@@ -262,14 +268,7 @@ angular.module('aquarium.trash', [])
                             if (compteur_start == 4)
                             {
 
-                                try {
-                                    musicController.stopCountDownMusic();
-
-                                }
-                                catch (e)
-                                {
-
-                                }
+                             
                                 $scope.animation.blnHideIndicator = true;
                                 start();
 
@@ -365,6 +364,11 @@ angular.module('aquarium.trash', [])
                     {
                         $scope.animation.blnHideIndicator = true;
                     }
+                    if (time_game == 3)
+                    {
+  
+                        musicController.playFinishSound();
+                    }
                     if (time_game < 0)
                     {
 
@@ -392,14 +396,13 @@ angular.module('aquarium.trash', [])
                             $scope.animation.port1out = false;
                             $scope.animation.port1in = true;
                             $scope.animation.port2in = true;
-                            $scope.animation.number = "FINISH!";
+                            $scope.animation.number = "";
                              $scope.animation.showscore = true;
                              $scope.animation.score = comptor_sac;
                             $scope.$digest();
                             navigator.vibrate(2000);
 
                             window.clearInterval(animatorTimer);
-                            musicController.playFinishSound();
                             try {
                                 navigator.accelerometer.clearWatch(watchID);
 

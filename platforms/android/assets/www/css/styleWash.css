@@ -1,26 +1,27 @@
 .washmachine {
-    
-     
-  
-    
-     width: 70vw;
+
+
+
+
+    width: 70vw;
     height: 85vw;
+
     position: relative;
-    
+
     margin-left: 15%;
-     text-align : center;
+    text-align : center;
     margin-top: 50vw;
 }
 
 .washmachine img 
 {
-    
+
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
-    
+
 }
 
 .tumbler img 
@@ -31,24 +32,23 @@
 
 .moussetop img
 {
-     width: 100%;
+    width: 100%;
     height: 100%;
-    
-    
+
+
 }
 
 .tumbler {
-  
+
     width: 50vw;
     height: 50vw;
-     display: inline-block;
+    display: inline-block;
     margin:0 auto;
     margin-top: 30%;
+    position: relative;
+    clear: both;
 
-     position: relative;
-     clear: both;
 
-    
 }
 
 .moussetop {
@@ -57,7 +57,7 @@
     -webkit-transition: all 2s;
     -o-transition: all 2s;
     transition: all 2s;
-   overflow: visible;
+    overflow: visible;
     width: 40vw;
     height: 40vw;
     position: absolute;
@@ -72,7 +72,7 @@
     transition: all 2s;
     width:65vw;
     height : 65vw;
-   margin-left: 10%;
+    margin-left: 10%;
     margin-top: 25%;
 }
 
@@ -80,12 +80,13 @@
     width : 100%;
     height : 10%;
     top: 50%;
-      position:absolute;
-    
+    position:absolute;
+
     text-align: center;
     vertical-align:middle;
     font-size: 25vw;
     color: white;
+    text-shadow: 0 0 7px rgba(0,0,0, 0.5);
 }
 
 .starterkitfondu {
@@ -98,7 +99,11 @@
 
 .star p {
     margin-bottom: 5%;
+        text-shadow: 0 0 7px rgba(0,0,0, 0.5);
+
 }
+
+
 
 .star {
     width: 100%;
@@ -115,17 +120,17 @@
 }
 
 .stardescending {
-   
+
     -moz-transition: all 10s;
     -webkit-transition: all 10s;
     -o-transition: all 10s;
     transition: all 10s;
-     top: 130%;
+    top: 130%;
 }
 
 .timer_show
 {
-  
+
     width: 40%;
     float: left;
     text-align: center;
@@ -150,10 +155,10 @@
 
 .washMachineRight {
 
-    
-    
+
+
     margin-left: 16%;
- 
+
 }
 
 .indication {
@@ -177,7 +182,8 @@
     transition: all 0.5s;
     font-size: 10vw;
     color: white;
-    
+    text-shadow: 0 0 7px rgba(0,0,0, 0.5);
+
 }
 
 .hideIndication
@@ -204,13 +210,13 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
     font-size: 11vw;
-    
+
 }
 
 .porte1wash {
-       background-color: #9DE7F9;
+    background-color: #9DE7F9;
 }
 
 .porte2wash {
-       background-color: #9DE7F9;
+    background-color: #9DE7F9;
 }

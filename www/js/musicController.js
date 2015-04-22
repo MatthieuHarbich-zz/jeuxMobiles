@@ -20,6 +20,8 @@ angular.module('aquarium.music', [])
             var music_delicious;
             var music_devine;
             var music_sugar;
+            var trash_effect;
+            var flash_effect;
             var stop = true;
 
             return {
@@ -28,7 +30,7 @@ angular.module('aquarium.music', [])
                     if (musique == null)
                     {
                         try {
-                            finish = new Media(replacementForAndroid("sound/finish.mp3"),
+                            flash_effect = new Media(replacementForAndroid("sound/chasse.mp3"),
                                     function () {
                                         console.log("playAudio():Audio Success");
                                     },
@@ -36,7 +38,23 @@ angular.module('aquarium.music', [])
                                         console.log("playAudio():Audio Error: " + err);
                                     }
                             );
-                            areYouReady = new Media(replacementForAndroid("sound/areYouReady.mp3"),
+                            trash_effect  = new Media(replacementForAndroid("sound/swoosh.mp3"),
+                                    function () {
+                                        console.log("playAudio():Audio Success");
+                                    },
+                                    function (err) {
+                                        console.log("playAudio():Audio Error: " + err);
+                                    }
+                            );
+                            finish = new Media(replacementForAndroid("sound/beep_fin.mp3"),
+                                    function () {
+                                        console.log("playAudio():Audio Success");
+                                    },
+                                    function (err) {
+                                        console.log("playAudio():Audio Error: " + err);
+                                    }
+                            );
+                            areYouReady = new Media(replacementForAndroid("sound/321.mp3"),
                                     function () {
                                         console.log("playAudio():Audio Success");
                                     },
@@ -60,7 +78,7 @@ angular.module('aquarium.music', [])
                                         console.log("playAudio():Audio Error: " + err);
                                     }
                             );
-                            gong = new Media(replacementForAndroid("sound/washMachineBulle.mp3"),
+                            gong = new Media(replacementForAndroid("sound/effect.mp3"),
                                     function () {
                                         console.log("playAudio():Audio Success");
                                     },
@@ -68,7 +86,7 @@ angular.module('aquarium.music', [])
                                         console.log("playAudio():Audio Error: " + err);
                                     }
                             );
-                            var string_music = ["sound/sweet.mp3", "sound/tasty.mp3", "sound/delicious.mp3", "sound/divine.mp3", "sound/sugarcrush.mp3"];
+                            var string_music = ["sound/voix_jeux_grouille.mp3", "sound/voix_jeux_plus_vite.mp3", "sound/voix_jeux_joli_thierry_2.mp3", "sound/voix_jeux_test_au_top.mp3", "sound/voix_jeux_top_scorer_2.mp3"];
                             music_tasty = new Media(replacementForAndroid(string_music[1]),
                                     function () {
                                         console.log("playAudio():Audio Success");
@@ -156,8 +174,34 @@ angular.module('aquarium.music', [])
                 {
                     try {
                         musique.stop();
+                        
                         musique.play();
+                        musique.setVolume(0.2);
                         stop =false;
+                    }
+                    catch (e)
+                    {
+
+                    }
+                },
+                playTrashEffect: function playTrashEffect()
+                {
+                    try {
+                        trash_effect.stop();
+                        trash_effect.play();
+                        trash_effect.setVolume(0.1);
+                    }
+                    catch (e)
+                    {
+
+                    }
+                },
+                playFlashEffect: function playFlashEffect()
+                {
+                    try {
+                        flash_effect.stop();
+                        flash_effect.play();
+                        flash_effect.setVolume(0.2);
                     }
                     catch (e)
                     {
@@ -180,6 +224,7 @@ angular.module('aquarium.music', [])
                     {
                     try {
                         musique.play();
+                        musique.setVolume(0.2);
                     }
                     catch (e)
                     {
@@ -203,6 +248,7 @@ angular.module('aquarium.music', [])
                     try {
                         gong.stop();
                         gong.play();
+                        gong.setVolume(0.1);
                     }
                     catch (e)
                     {
@@ -214,6 +260,7 @@ angular.module('aquarium.music', [])
                     try {
                         finish.stop();
                         finish.play();
+                         finish.setVolume(1.0);
                     }
                     catch (e)
                     {
@@ -236,6 +283,7 @@ angular.module('aquarium.music', [])
                     try {
                         areYouReady.stop();
                         areYouReady.play();
+                        areYouReady.setVolume(1.0);
                     }
                     catch (e)
                     {
