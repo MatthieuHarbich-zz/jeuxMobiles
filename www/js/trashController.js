@@ -84,7 +84,7 @@ angular.module('aquarium.trash', [])
             }
         })
 
-        .controller('trashCtrl', function ($rootScope, apiUrl, $http, $sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
+        .controller('trashCtrl', function (store,$rootScope, apiUrl, $http, $sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
 
 
             function send_score(score_to_send)
@@ -95,12 +95,13 @@ angular.module('aquarium.trash', [])
                     url: apiUrl + "/scores",
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-user-id':"55374a5c78b7aa0300b0b56c",
-                        salt:"1098815098.308584"
+                        
+                        salt:store.get('currentUserSalt')
                     },
                     data:
                             {
-                                pts: score_to_send,
+                                user:store.get('currentUserId'),
+                                pts: score_to_send.toString(),
                                 gameName: "trash"
                             }
 
@@ -111,7 +112,8 @@ angular.module('aquarium.trash', [])
 
                 }).error(function (data) {
 
-                    alert('Etes vous connecté à internet?');
+                    console.log(data);
+                    console.log(score_to_send);
                     //attention au callback
                 });
             }

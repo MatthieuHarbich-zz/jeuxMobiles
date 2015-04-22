@@ -20,7 +20,7 @@ angular.module('aquarium.wash', [])
                 }
             }
         })
-        .controller('washCtrl', function ($ionicHistory, $sce, $state, $window, $scope, $ionicPopup, $ionicPlatform, musicController) {
+        .controller('washCtrl', function ($rootScope,$http,apiUrl,$ionicHistory,store, $sce, $state, $window, $scope, $ionicPopup, $ionicPlatform, musicController) {
 
 
             var descending = false;
@@ -47,7 +47,33 @@ angular.module('aquarium.wash', [])
             
             function send_score (score_to_send)
             {
-                
+                $rootScope.lastScore = score_to_send;
+                $http({
+                    method: "POST",
+                    url: apiUrl + "/scores",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        
+                        salt:store.get('currentUserSalt')
+                    },
+                    data:
+                            {
+                                user:store.get('currentUserId'),
+                                pts: score_to_send.toString(),
+                                gameName: "wash"
+                            }
+
+                }).success(function (data) {
+
+                    console.log("Ok!");
+
+
+                }).error(function (data) {
+
+                    console.log(data);
+                    console.log(score_to_send);
+                    //attention au callback
+                });
             }
 
 

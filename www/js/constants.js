@@ -1,4 +1,4 @@
 angular.module('aquarium.constants', [])
-  .constant('apiUrl', 'https://pfouah2015.herokuapp.com/api')
+  .constant('apiUrl', 'http://localhost:8100/api-proxy')
 
 ;

@@ -96,7 +96,7 @@ angular.module('aquarium.trash', [])
                     headers: {
                         'Content-Type': 'application/json',
                         'x-user-id':"55374a5c78b7aa0300b0b56c",
-                        salt:"1098815098.308584"
+                        salt:1098815098.308584
                     },
                     data:
                             {
@@ -111,7 +111,7 @@ angular.module('aquarium.trash', [])
 
                 }).error(function (data) {
 
-                    alert('Etes vous connecté à internet?');
+                    alert(JSON.stringify(data));
                     //attention au callback
                 });
             }
