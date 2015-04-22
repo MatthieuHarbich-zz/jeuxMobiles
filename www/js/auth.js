@@ -5,9 +5,10 @@ angular.module('aquarium.auth', ['angular-storage'])
         
     
 
-    $rootScope.currentUserId = true;
-    // $rootScope.currentUserId = store.get('currentUserId');
+    
+    $rootScope.currentUserId = store.get('currentUserId');
     console.log(store.get('currentUserId')); // récupérer dans le localstorage
+    console.log(store.get('currentUserSalt')); // récupérer dans le localstorage
     $rootScope.image = {};
     var service = {
       currentUserId: store.get('currentUserId'),
@@ -32,6 +33,12 @@ angular.module('aquarium.auth', ['angular-storage'])
         service.currentUserId = user._id;
         store.set('currentUserId', user._id);
         $rootScope.currentUserId = store.get('currentUserId');
+      },
+
+      setSalt: function(user) {
+        service.currentUserSalt = user.salt;
+        store.set('currentUserSalt', user.salt);
+        $rootScope.currentUserSalt = store.get('currentUserSalt');
       },
 
       unsetUser: function() {
@@ -128,6 +135,8 @@ angular.module('aquarium.auth', ['angular-storage'])
               console.log('lig');
               console.log(pseuedo + password);
               $scope.login(pseuedo, password);
+              AuthService.setUser(data.user);
+              AuthService.setSalt(data.user);
 
               
             }).error(function(data){
@@ -209,6 +218,7 @@ angular.module('aquarium.auth', ['angular-storage'])
 
         // If successful, give the user to the authentication service.
         AuthService.setUser(user);
+        AuthService.setSalt(user);
 
         // Hide the loading message.
         $ionicLoading.hide();

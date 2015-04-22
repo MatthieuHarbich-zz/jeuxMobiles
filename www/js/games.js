@@ -32,6 +32,9 @@ angular.module('aquarium.games', [])
                 });
 
 
+            $scope.trashLastScore = 31;
+            $scope.flashLastScore = 31;
+            $scope.washLastScore = 31;
 
 
 

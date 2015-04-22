@@ -75,7 +75,7 @@ $ionicConfigProvider.tabs.position('bottom');
         'app-home': {
   
           templateUrl: 'templates/games.html',
-          controller:'gamesCtrl'
+          controller:'homeCtrl'
           
         }
       }
