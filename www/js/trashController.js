@@ -84,12 +84,36 @@ angular.module('aquarium.trash', [])
             }
         })
 
-        .controller('trashCtrl', function ($sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
+        .controller('trashCtrl', function ($rootScope, apiUrl, $http, $sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
 
 
             function send_score(score_to_send)
             {
+                $rootScope.lastScore = score_to_send;
+                $http({
+                    method: "POST",
+                    url: apiUrl + "/scores",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-user-id':"55374a5c78b7aa0300b0b56c",
+                        salt:"1098815098.308584"
+                    },
+                    data:
+                            {
+                                pts: score_to_send,
+                                gameName: "trash"
+                            }
 
+                }).success(function (data) {
+
+                    console.log("Ok!");
+
+
+                }).error(function (data) {
+
+                    alert('Etes vous connecté à internet?');
+                    //attention au callback
+                });
             }
 
             function specialText(star)
