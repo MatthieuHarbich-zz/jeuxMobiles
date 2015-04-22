@@ -2,33 +2,31 @@
 <ion-view class="games" view-title="Games">
   <ion-content scroll="false">     
 		<ul class="list">
-<<<<<<< HEAD
-		    <li ng-style="myStyle" ng-controller="flashCtrl" ng-click="moveToFlash()" class="item btnFlash">
-		      <img class="gameImg" src="img/toilet.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyleScore">213</div>
 
-		    </li>
-		    <li ng-style="myStyle" ng-controller="trashCtrl" ng-click="moveToTrash()" class="item btnTrash">
-		      <img class="gameImg" src="img/trash.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyleScore">123</div>
-		    </li>
-		    <li ng-style="myStyle" ng-controller="washCtrl" ng-click="moveToWash()" class="item btnWash">
-		      <img class="gameImg" src="img/wash.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyleScore">453</div>
-=======
 		    <li ng-style="myStyle" ng-controller="flashDirection" ng-click="moveToFlash()" class="item btnFlash">
 		      <img class="gameImg" src="./img/toilet.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyle">213</div>
+		      <div id="scores" ng-style="myStyleScore">
+		      	<div class="imgScore">{{userScore.hsFlash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{userScore.hsFlash}} <span>pts</span></div>
+		      </div>
+		      
 
 		    </li>
 		    <li ng-style="myStyle" ng-controller="trashDirection" ng-click="moveToTrash()" class="item btnTrash">
 		      <img class="gameImg" src="./img/trash.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyle">123</div>
+		      <div id="scores" ng-style="myStyleScore">
+			      <div class="imgScore" >{{userScore.hsTrash}} <span>pts</span></div>
+			      <div class="imgLastScore">{{userScore.hsTrash}} <span>pts</span></div>
+		  	  </div>
 		    </li>
 		    <li ng-style="myStyle" ng-controller="washDirection" ng-click="moveToWash()" class="item btnWash">
 		      <img class="gameImg" src="./img/wash.png" ng-style="myStyle" alt="">
-		      <div class="imgScore" ng-style="myStyle">453</div>
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
+		      <div id="scores" ng-style="myStyleScore">
+		      	<div class="imgScore">{{userScore.hsWash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{userScore.hsWash}} <span>pts</span></div>
+		      </div>
+		      
+
 		    </li>
 		</ul>
   </ion-content>

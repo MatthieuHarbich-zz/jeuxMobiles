@@ -86,7 +86,7 @@ angular.module('aquarium.music', [])
                                         console.log("playAudio():Audio Error: " + err);
                                     }
                             );
-                            var string_music = ["sound/voix_jeux_grouille.mp3", "sound/voix_jeux_plus_vite.mp3", "sound/voix_jeux_joli_thierry_2.mp3", "sound/voix_jeux_test_au_top.mp3", "sound/voix_jeux_top_scorer_2.mp3"];
+                            var string_music = ["sound/voix_jeux_grouille.mp3", "sound/voix_jeux_plus_vite.mp3", "sound/voix_jeux_joli_thierry.mp3", "sound/voix_jeux_test_au_top.mp3", "sound/voix_jeux_top_scorer_2.mp3"];
                             music_tasty = new Media(replacementForAndroid(string_music[1]),
                                     function () {
                                         console.log("playAudio():Audio Success");

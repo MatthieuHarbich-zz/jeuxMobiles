@@ -1,28 +1,23 @@
-<<<<<<< HEAD
 <ion-view class="login"  view-title="aquarium">
   <ion-content class="padding login">
 		
 		<img src="img/goutte.png" alt="">
 	   <div  id="loginForm" class="">
 		  
-		    <input type="text" placeholder="First Name">		  
-		    <input type="text" placeholder="Last Name">
+		    <input ng-model="pseudo" type="text" placeholder="Pseuedo">		  
+		    <input ng-model="password" type="password" placeholder="Password">
 	  	  
 		</div>
-		<button id="buttonLogin" ng-click="login()" class="button buttonLogin button-block button-positive">
+		<button id="buttonLogin" ng-click="login(pseudo, password)" class="button buttonLogin button-block button-positive">
   			Login
 		</button>
 		<button id="buttonLogin" ng-click="getPhoto()"class="button buttonLogin button-block button-assertive">
-  			Register
+  			Enregistre toi!!
 		</button>
 
+		<div></div>
+		
 		<div ng-repeat="user in users">{{user}}</div>
 
-=======
-<ion-view view-title="aquarium">
-  <ion-content class="padding login">
-
-   <h1>Login view</h1>
->>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
   </ion-content>
 </ion-view>

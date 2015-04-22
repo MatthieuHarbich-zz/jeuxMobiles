@@ -44,6 +44,11 @@ angular.module('aquarium.wash', [])
                 musicController.playWowSound(star - 1);
 
             }
+            
+            function send_score (score_to_send)
+            {
+                
+            }
 
 
 
@@ -430,6 +435,7 @@ angular.module('aquarium.wash', [])
                             $scope.animation.number = "";
                             $scope.animation.showscore = true;
                             $scope.animation.score = nb_tour;
+                            send_score(nb_tour);
                             $scope.$digest();
                             navigator.vibrate(2000);
 

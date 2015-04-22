@@ -1,0 +1,44 @@
+<ion-view class="trash" view-title="Trash">
+  <ion-content id="trash" scroll="false">    
+      
+      <div class ="canal">
+            
+      <div class ="sac1" sac1 degrees="animation.sac1">
+                <img src="./img/sachet.png"  alt="">
+            </div>
+      
+      <div class ="sac2" sac2 degrees="animation.sac2">
+                <img src="./img/sachet2.png"  alt="">
+      </div>
+           <div class ="sac3" sac3 degrees="animation.sac3">
+               <img src="./img/sachet3.png"  alt=""></div>
+    
+      </div>
+      
+      <div class="hider">
+          <div class="tampon"></div>
+          <div class="rouleau"><img src="./img/rouleau.png" alt =""></div>
+      </div>
+      
+       
+        <div class ="indication_trash" ng-class="{'hideIndication':animation.blnHideIndicator}">
+            <img src="./img/indicationTrash.png"  alt="" ng-class="{'movementArrowTrash':animation.blnRotationIndicator}">
+            <div class = "textindicator"><p ng-class="{'textBounce':animation.blntextBounce}">Shake your phone !</p></div>
+        </div>
+      <div class ="timer_show_trash">{{animation.timershow}}</div>
+        <div class ="number_show_trash">{{animation.numbershow}}</div>
+        
+         
+<div class="star" ng-class="{'stardescending':animation.stardescending}">
+             <p>{{animation.godlike}}</p>
+            <div  ng-bind-html="animation.starsystem">
+            
+            </div></div>
+         
+      <div class="porte1 porte1trash" ng-class="{'porte1movementout':animation.port1out, 'porte1movementin':animation.port1in}"></div>
+      <div class="porte2 porte2trash" ng-class="{'porte2movementin':animation.port2in,'porte2movementout':animation.port2out}"></div>
+       <div class ="starterkit" ng-class="{'starterkitfondu':animation.blnfondu}"><p>{{animation.number}}</p></div>
+       <div class ="score" ng-class="{'showScore':animation.showscore}"><p>Your Score:</p>
+           <p>{{animation.score}}</p></div>
+  </ion-content>
+</ion-view>

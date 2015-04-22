@@ -1,0 +1,729 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"api",
+				"apiUrl"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pro",
+				"profilZone"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"angular",
+				"angular-timer"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"background-",
+				"background-color"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"he",
+				"heightStyle"
+			],
+			[
+				"ion",
+				"ion-list	Ionic Extension"
+			],
+			[
+				"lis",
+				"listCenterMarker"
+			],
+			[
+				"backgroud",
+				"background-color"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"new",
+				"newComment"
+			],
+			[
+				"issue",
+				"issueById"
+			],
+			[
+				"issueId",
+				"issueId"
+			],
+			[
+				"state",
+				"stateParams"
+			],
+			[
+				"getIssue",
+				"getIssueById"
+			],
+			[
+				"issu",
+				"issueType"
+			],
+			[
+				"li",
+				"listMarkers"
+			],
+			[
+				"fil",
+				"filterText"
+			],
+			[
+				"fi",
+				"filterText"
+			],
+			[
+				"bro",
+				"broadcast"
+			],
+			[
+				"broad",
+				"broadcastItem"
+			],
+			[
+				"filter",
+				"filterText"
+			],
+			[
+				"ima",
+				"imageUrl"
+			],
+			[
+				"im",
+				"imageUrl"
+			],
+			[
+				"image",
+				"imageData"
+			],
+			[
+				"post",
+				"postPhoto"
+			],
+			[
+				"Camera",
+				"CameraService"
+			],
+			[
+				"iss",
+				"issueTypeDescr"
+			],
+			[
+				"ap",
+				"apiUrl"
+			],
+			[
+				"defer",
+				"deferred"
+			],
+			[
+				"fo",
+				"forEach"
+			],
+			[
+				"ma",
+				"mapboxMapId"
+			],
+			[
+				"getU",
+				"getUserById"
+			],
+			[
+				"get",
+				"getUserById"
+			],
+			[
+				"tempate",
+				"templateUrl"
+			],
+			[
+				"template",
+				"templateUrl"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"cre",
+				"createdAt"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"solved",
+				"solvedAt"
+			],
+			[
+				"updated",
+				"updatedAt"
+			],
+			[
+				"update",
+				"updatedAt"
+			],
+			[
+				"find",
+				"findOne"
+			],
+			[
+				"con",
+				"convertMongoIssue"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"assi",
+				"assignId"
+			],
+			[
+				"fin",
+				"findByIdAndRemove"
+			],
+			[
+				"pu",
+				"populate"
+			],
+			[
+				"action",
+				"actionTypeId"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Applications/MAMP/htdocs/chiotte/app/scripts/directives/keyupevent.js",
+			"settings":
+			{
+				"buffer_size": 640,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/MAMP/htdocs/chiotte/app/views/main.html",
+			"settings":
+			{
+				"buffer_size": 83,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/MAMP/htdocs/chiotte/app/scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"SublimeREPL: Node"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/toilette/style.css",
+		"/Applications/MAMP/htdocs/toilette/games.json",
+		"/Applications/MAMP/htdocs/toilette/script.js",
+		"/Applications/MAMP/htdocs/toilette/index.html",
+		"/Applications/MAMP/htdocs/chiotte/app/styles/main.css",
+		"/Applications/MAMP/htdocs/toilette/lib/jquery.js",
+		"/Applications/MAMP/htdocs/chiotte/app/views/main.html",
+		"/Applications/MAMP/htdocs/chiotte/app/index.html",
+		"/Applications/MAMP/htdocs/chiotte/app/scripts/app.js",
+		"/Applications/MAMP/htdocs/chiotte/app/scripts/controllers/main.js",
+		"/Applications/MAMP/htdocs/chiotte/app/scripts/directives/keyupevent.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/css/style.css",
+		"/Users/Matthieu/Documents/comem/transmedia/toilette/toilette.js",
+		"/Users/Matthieu/Documents/comem/transmedia/toilette/script.js",
+		"/Users/Matthieu/Documents/comem/transmedia/toilette/style.css",
+		"/Users/Matthieu/Documents/comem/transmedia/toilette/index.html",
+		"/Users/Matthieu/Downloads/angular.min.js",
+		"/Users/Matthieu/Documents/comem/transmedia/toilette/lib/angular.min.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/home.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/trash.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/wash.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/games.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/games.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/index.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/home.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/login.html",
+		"/Users/Matthieu/Downloads/webfontkit-20150414-094830/stylesheet.css",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/auth.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/register.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/lib/angular-timer/app/js/i18nService.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/lib/angular-timer/examples/angularjs-single-timer.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/constants.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/users.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/config/production.json",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/config/development.json",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/js/app.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/js/app.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/js/auth.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/js/home.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/js/users.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/index.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/templates/login.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/js/constants.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/constants.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/gulpfile.js",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/package.json",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/README.md",
+		"/Users/Matthieu/Documents/comem/transmedia/jeuxMobiles/www/templates/menu.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/templates/home.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/templates/menu.html",
+		"/Users/Matthieu/Documents/comem/transmedia/jeux/www/css/style.css",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/login.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/users.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/issueType.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/addIssue.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/map.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/css/style.css",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/tabs.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/users.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/issueDetail.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/app.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/menu.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/auth.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/Issue.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/index.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/lastIssues.html",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/ionic.project",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/gulpfile.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/constants.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/config/production.json",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/config/development.json",
+		"/Users/Matthieu/Documents/comem/appMob/API/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express-Impl/app/models/action.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/map.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/listIssues.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/constants.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/js/lastIssues.js",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/bower.json",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/config/sample.json",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/.gitignore",
+		"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/lib/a0-angular-storage/gulpfile.js",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/config/sample.json",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/.gitignore",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/config/production.json",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/config/developement.json",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/ionic.project",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/templates/addIssue.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/templates/map.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/templates/lastIssues.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/templates/tabs.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/templates/login.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/js/auth.js",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/js/app.js",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/www/index.html",
+		"/Users/Matthieu/Documents/comem/appMob/smart-city/package.json",
+		"/Users/Matthieu/Documents/comem/TB/client/app/account/login/login.jade",
+		"/Users/Matthieu/Documents/comem/TB/client/app/main/main.less",
+		"/Users/Matthieu/Documents/comem/TB/client/app/main/main.js",
+		"/Users/Matthieu/Documents/comem/TB/bower.json",
+		"/Users/Matthieu/Documents/comem/TB/README.md",
+		"/Users/Matthieu/Documents/comem/TB/doc.md",
+		"/Users/Matthieu/Documents/comem/TB/client/app/account/login/login.less",
+		"/Users/Matthieu/Documents/comem/TB/client/app/main/main.jade",
+		"/Users/Matthieu/Documents/comem/TB/express-angular/client/app/admin/admin.js",
+		"/Users/Matthieu/Documents/comem/TB/express-angular/client/app/account/settings/settings.controller.js",
+		"/Users/Matthieu/Documents/comem/TB/express-angular/node_modules/grunt/lib/grunt/config.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/package.json",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/blog/index.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/templates/home.jade",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/templates/api.jade",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/templates/layout.jade",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/static/css/myCss.css",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/blog/2015-03-02-initial.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/blog/2015-02-09-initial.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/api/index.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/index.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/blog/2015-02-07-initial.md",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/api/raml/index.raml",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/issueType.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/issue.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/issue.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/user.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/user.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/comment.js",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/templates/css/app.styl",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/static/css/bootstrap.css",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/templates/blog.jade",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/build/index.html",
+		"/Users/Matthieu/Documents/comem/webservice/Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/config/express.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ng-controller",
+			"logOut",
+			"alert",
+			"postIssue",
+			"toggle",
+			"push",
+			"{}\n",
+			"cluster",
+			"port",
+			".container",
+			"findOne",
+			"else",
+			"number",
+			"issues"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Applications/MAMP/htdocs/chiotte/app/scripts/directives/keyupevent.js",
+					"settings":
+					{
+						"buffer_size": 640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								611
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Applications/MAMP/htdocs/chiotte/app/views/main.html",
+					"settings":
+					{
+						"buffer_size": 83,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Applications/MAMP/htdocs/chiotte/app/scripts/app.js",
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"config",
+				"express-angular/node_modules/grunt/lib/grunt/config.js"
+			],
+			[
+				"issuet",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/issueType.js"
+			],
+			[
+				"commen",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/comment.js"
+			],
+			[
+				"issue",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/issueType.js"
+			],
+			[
+				"modelsuser",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/user.js"
+			],
+			[
+				"index.html",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/build/index.html"
+			],
+			[
+				"user",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/user.js"
+			],
+			[
+				"index.raml",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/api/raml/index.raml"
+			],
+			[
+				"modelissue",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/issue.js"
+			],
+			[
+				"index.ral",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/src/api/raml/index.raml"
+			],
+			[
+				"index",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/build/api/raml/index.raml"
+			],
+			[
+				"index.ra",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/build/api/raml/index.raml"
+			],
+			[
+				"data",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/data.js"
+			],
+			[
+				"modeluser",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/models/user.js"
+			],
+			[
+				"user.js",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/user.js"
+			],
+			[
+				"users",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Doc/node_modules/raml-parser/box/schemas/usersCollection.json"
+			],
+			[
+				"issuety",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/app/controllers/issueType.js"
+			],
+			[
+				"",
+				"Teaching-HEIGVD-CM_WEBS-2015-Labo-Express/.bowerrc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/Matthieu/Documents/comem/appMob/citizen-engagement/www/templates/transmedia.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 304.0,
+	"status_bar_visible": true
+}

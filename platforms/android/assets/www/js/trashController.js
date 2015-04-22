@@ -86,11 +86,17 @@ angular.module('aquarium.trash', [])
 
         .controller('trashCtrl', function ($sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
 
+
+            function send_score(score_to_send)
+            {
+
+            }
+
             function specialText(star)
             {
                 descending = true;
 
-                 var string_rate = ["Grouille", "Plus vite", "Joli", "Top", "TopScorer"];
+                var string_rate = ["Grouille", "Plus vite", "Joli", "Top", "TopScorer"];
 
                 var toAdd = '<img class="starImg" src="./img/star.png" alt="">';
                 var string = '';
@@ -268,7 +274,7 @@ angular.module('aquarium.trash', [])
                             if (compteur_start == 4)
                             {
 
-                             
+
                                 $scope.animation.blnHideIndicator = true;
                                 start();
 
@@ -366,7 +372,7 @@ angular.module('aquarium.trash', [])
                     }
                     if (time_game == 3)
                     {
-  
+
                         musicController.playFinishSound();
                     }
                     if (time_game < 0)
@@ -397,8 +403,9 @@ angular.module('aquarium.trash', [])
                             $scope.animation.port1in = true;
                             $scope.animation.port2in = true;
                             $scope.animation.number = "";
-                             $scope.animation.showscore = true;
-                             $scope.animation.score = comptor_sac;
+                            $scope.animation.showscore = true;
+                            $scope.animation.score = comptor_sac;
+                            send_score(comptor_sac);
                             $scope.$digest();
                             navigator.vibrate(2000);
 
