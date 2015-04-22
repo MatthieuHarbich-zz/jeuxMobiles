@@ -3,7 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('aquarium', ['ionic','timer','aquarium.auth', 'aquarium.constants', 'aquarium.home', 'aquarium.games'])
+
+angular.module('aquarium', ['ionic', 'timer', 'aquarium.auth', 'aquarium.constants', 'aquarium.home', 'aquarium.games','aquarium.wash','aquarium.flash','aquarium.trash','aquarium.music'])
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,11 +25,13 @@ angular.module('aquarium', ['ionic','timer','aquarium.auth', 'aquarium.constants
   $rootScope.$on('$stateChangeStart', function(event, toState) {
 
     
-    // if (!AuthService.currentUserId && toState.name != 'login') {
+    if (!AuthService.currentUserId && toState.name != 'login') {
 
-      
-    //   $state.go('login');
-    // }
+      console.log('in if');
+      $state.go('login');
+    };
+
+    
   });
 })
 
@@ -79,6 +83,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
     .state('app.flash', {
       url: '/flash',
+      cache : false,
        views: {
         
         'app-home': {
@@ -92,6 +97,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
     .state('app.trash', {
       url: '/trash',
+      cache : false,
        views: {
         
         'app-home': {
@@ -105,6 +111,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
     .state('app.wash', {
       url: '/wash',
+      cache : false,
        views: {
         
         'app-home': {
@@ -126,7 +133,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
     .state('register', {
       url: '/register',
-      controller: 'registerCtrl',
+      controller: 'LoginCtrl',
       templateUrl: 'templates/register.html'
     })
 
@@ -135,7 +142,7 @@ $ionicConfigProvider.tabs.position('bottom');
 
   
   $urlRouterProvider.otherwise(function($injector) {
-    $injector.get('$state').go('login'); 
+    $injector.get('$state').go('app.home'); 
   });
 
 

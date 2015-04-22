@@ -1,0 +1,84 @@
+.sac1 {
+    position: absolute;
+    top: 0vh;
+    width: 100%;
+    height: 52%;
+}
+
+.sac2 {
+    position: absolute;
+    top: 50vh;
+    width: 100%;
+    height: 52%;
+}
+
+.sac3 {
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    height: 52%;
+}
+
+.canal img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.rouleau img {
+    height : 100%;
+    width : 52vw;
+    margin-left: 24%;
+}
+
+.canal {
+    width: 50vw;
+    position: relative;
+    
+    margin-left: 25%;
+    text-align : center;
+    height: 100vh;
+}
+.hider {
+    position:absolute;
+    top:0px;
+    width:100%;
+    height: 30vh;
+}
+
+.tampon {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    background-color: #F9B995;
+}
+
+.rouleau 
+{
+    position: relative;
+    width: 100%;
+    height: 20%;
+
+}
+
+.timer_show_trash
+{
+  
+    position:absolute;
+    top: 10%;
+    right: 10%;
+    text-align: center;
+    font-size: 15vw;
+    color: white;
+}
+
+.number_show_trash
+{
+
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    font-size: 15vw;
+    color: white;
+}

@@ -1,5 +1,35 @@
 <ion-view class="wash" view-title="Wash">
-  <ion-content id="wash" scroll="false">     
-		
-  </ion-content>
+    <ion-content id="wash" scroll="false">     
+        <div class ="timer_show">{{animation.timershow}}</div>
+        <div class ="indication" ng-class="{'hideIndication':animation.blnHideIndicator}">
+            <img src="./img/indicationWashmachine.png"  alt="" ng-class="{'rotationIndicator':animation.blnRotationIndicator}">
+            <div class = "textindicator"><p ng-class="{'textBounce':animation.blntextBounce}">Rotate your phone !</p></div>
+        </div>
+        <div class ="number_show">{{animation.numbershow}}</div>
+        
+        
+        
+        <div class ="washmachine" ng-class="{'washMachineRight':animation.blnwashMachineRight}">
+             <img src="./img/washmachine.png"  alt="">
+            <div class ="moussetop" ng-class="{'moussetopup':animation.moussetop}">
+                <img src="./img/mousse.png"  alt="">
+            </div>
+            <div class ="tumbler" rotate degrees="animation.rotation">
+                <img src="./img/tumbler.png"  alt="">
+            </div>
+           
+
+
+        </div>
+        <div class ="starterkit" ng-class="{'starterkitfondu':animation.blnfondu}"><p>{{animation.number}}</p></div>
+<div class="star" ng-class="{'stardescending':animation.stardescending}">
+             <p>{{animation.godlike}}</p>
+            <div  ng-bind-html="animation.starsystem">
+            
+            </div>
+           
+            
+            
+        </div>
+    </ion-content>
 </ion-view>

@@ -1,5 +1,30 @@
 <ion-view class="trash" view-title="Trash">
-  <ion-content id="trash" scroll="false">     
-		
+  <ion-content id="trash" scroll="false">    
+      
+      <div class ="canal">
+            
+      <div class ="sac1" sac1 degrees="animation.sac1">
+                <img src="./img/sachet.png"  alt="">
+            </div>
+      
+      <div class ="sac2" sac2 degrees="animation.sac2">
+                <img src="./img/sachet.png"  alt="">
+      </div>
+           <div class ="sac3" sac3 degrees="animation.sac3">
+               <img src="./img/sachet.png"  alt=""></div>
+    
+      </div>
+      
+      <div class="hider">
+          <div class="tampon"></div>
+          <div class="rouleau"><img src="./img/rouleau.png" alt =""></div>
+      </div>
+      
+       <div class ="timer_show_trash">{{animation.timershow}}</div>
+        <div class ="indication" ng-class="{'hideIndication':animation.blnHideIndicator}">
+            <img src="./img/indicationWashmachine.png"  alt="" ng-class="{'rotationIndicator':animation.blnRotationIndicator}">
+            <div class = "textindicator"><p ng-class="{'textBounce':animation.blntextBounce}">Rotate your phone !</p></div>
+        </div>
+        <div class ="number_show_trash">{{animation.numbershow}}</div>
   </ion-content>
 </ion-view>

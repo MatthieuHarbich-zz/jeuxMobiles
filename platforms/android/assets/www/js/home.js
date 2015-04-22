@@ -19,6 +19,7 @@ angular.module('aquarium.home', [])
     }
 
     
+<<<<<<< HEAD
        $scope.timerRunning = true;
 
             
@@ -31,6 +32,9 @@ angular.module('aquarium.home', [])
             $scope.$on('timer-stopped', function (event, data){
                 console.log('Timer Stopped - data = ', data);
             });
+=======
+      
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
 
     
 

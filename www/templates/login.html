@@ -4,19 +4,19 @@
 		<img src="img/goutte.png" alt="">
 	   <div  id="loginForm" class="">
 		  
-		    <input type="text" placeholder="Pseuedo">		  
-		    <input type="password" placeholder="Password">
+		    <input ng-model="pseudo" type="text" placeholder="Pseuedo">		  
+		    <input ng-model="password" type="password" placeholder="Password">
 	  	  
 		</div>
-		<button id="buttonLogin" ng-click="login()" class="button buttonLogin button-block button-positive">
+		<button id="buttonLogin" ng-click="login(pseudo, password)" class="button buttonLogin button-block button-positive">
   			Login
 		</button>
 		<button id="buttonLogin" ng-click="getPhoto()"class="button buttonLogin button-block button-assertive">
-  			Register
+  			Enregistre toi!!
 		</button>
 
 		<div></div>
-		<p>{{imageData}}</p>
+		
 		<div ng-repeat="user in users">{{user}}</div>
 
   </ion-content>

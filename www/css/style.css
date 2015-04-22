@@ -60,7 +60,7 @@
 }
 
 #wash{
-	background-image:url('../img/wash.png');
+	
 	background-color: #9DE7F9;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -68,7 +68,7 @@
 }
 
 #trash{
-	background-image:url('../img/trash.png');
+
 	background-color: #F9B995;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -145,11 +145,11 @@ timer{
 	left: 25%;
 }
 
-.login img{
+/*.login img{
 	margin-left: 35%;
 	margin-top: 10%;
 	width:30%;
-}
+}*/
 
 #loginForm input{
 	padding: 25px;
@@ -180,6 +180,17 @@ timer{
 	margin-left: 15%;
 }
 
+.registerImage{
+	margin-top: 40px;
+	border:7px solid black;
+	
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width:70%;
+	height:230px;
+	margin-left: 15%;
+}
 #registerForm input{
 	padding: 25px;
 	width:100%;
@@ -196,15 +207,37 @@ button{
 	font-family: helsinkiregular;
 }
 
-.imgScore{
+.imgLastScore{
 	text-align:right;
 	margin-right: 5%;
-	font-size: 3em;
+	font-size: 1.5em;
 	color:white;
 	font-weight: 800;
 	position:absolute;
-	top:0;
+	top:10%;
+	right:10%;
+	font-family: helsinkiregular;
+	
+}
+
+.imgLastScore span{
+	text-transform: lowercase;
+}
+
+.imgScore span{
+	text-transform: lowercase;
+}
+
+.imgScore{
+	text-align:right;
+	margin-right: 5%;
+	font-size: 2.5em;
+	color:white;
+	font-weight: 800;
+	position:absolute;
+	top:-10%;
 	right:10%;
 	font-family: helsinkiregular;
 
 }
+

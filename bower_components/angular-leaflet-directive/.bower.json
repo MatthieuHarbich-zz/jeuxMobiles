@@ -2,7 +2,11 @@
   "name": "angular-leaflet-directive",
   "author": "https://github.com/tombatossals/angular-leaflet-directive/graphs/contributors",
   "description": "angular-leaflet-directive - An AngularJS directive to easily interact with Leaflet maps",
+<<<<<<< HEAD
   "version": "0.7.13",
+=======
+  "version": "0.7.12",
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
   "homepage": "http://tombatossals.github.io/angular-leaflet-directive/",
   "keywords": [
     "angularjs",
@@ -56,11 +60,19 @@
     "package.json",
     "bower.json"
   ],
+<<<<<<< HEAD
   "_release": "0.7.13",
   "_resolution": {
     "type": "version",
     "tag": "v0.7.13",
     "commit": "d08003ecc8ad81da3e59e179619b1d0cc0b61c6a"
+=======
+  "_release": "0.7.12",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.7.12",
+    "commit": "4abb3597c9b48b81d45850d8189595410f79ff2b"
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
   },
   "_source": "git://github.com/tombatossals/angular-leaflet-directive.git",
   "_target": "~0.7.11",

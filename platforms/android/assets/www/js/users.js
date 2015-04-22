@@ -34,11 +34,15 @@ angular.module('aquarium.users', [])
 				$scope.error = err;
 			}else{
 				$scope.users = data;
+<<<<<<< HEAD
 				console.log($$scope.users);
 			}
 
 			console.log('users');
 
+=======
+			}
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
 		});
 
 		$scope.toggleUser = function(user) {

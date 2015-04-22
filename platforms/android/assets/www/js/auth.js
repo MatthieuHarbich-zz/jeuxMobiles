@@ -16,6 +16,7 @@ angular.module('aquarium.auth', ['angular-storage'])
         store.remove('currentUserId');
         $rootScope.currentUserId = store.get('currentUserId');
 
+<<<<<<< HEAD
       },
 
       postPhoto: function(imageData, callback){
@@ -42,11 +43,15 @@ angular.module('aquarium.auth', ['angular-storage'])
             });
       }
       
+=======
+      }
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
     };
 
     return service;
   })
 
+<<<<<<< HEAD
 .factory('CameraService', function($q){
     return{
       getPicture: function(options){
@@ -114,6 +119,17 @@ angular.module('aquarium.auth', ['angular-storage'])
     $scope.moveToRegister = function(){
       $state.go('register');
     }
+=======
+  .controller('LoginCtrl', function(apiUrl, AuthService, $http, $ionicHistory, $ionicLoading, $scope, $state) {
+
+    // The $ionicView.beforeEnter event happens every time the screen is displayed.
+    $scope.$on('$ionicView.beforeEnter', function() {
+      // Re-initialize the user object every time the screen is displayed.
+      // The first name and last name will be automatically filled from the form thanks to AngularJS's two-way binding.
+      $scope.user = {};
+    });
+
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
     // Add the register function to the scope.
     $scope.register = function() {
 
@@ -171,6 +187,7 @@ angular.module('aquarium.auth', ['angular-storage'])
     
   })
 
+<<<<<<< HEAD
   .controller('registerCtrl', function(CameraService, AuthService, $scope, $state) {
     
      $scope.$on('$ionicView.beforeEnter', function(){
@@ -196,6 +213,8 @@ angular.module('aquarium.auth', ['angular-storage'])
     
   })
 
+=======
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
 
   .factory('AuthInterceptor', function(AuthService) {
     return {

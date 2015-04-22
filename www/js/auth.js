@@ -1,13 +1,36 @@
 angular.module('aquarium.auth', ['angular-storage'])
 
   .service('AuthService', function($rootScope, store) {
-    $rootScope.currentUserId = store.get('currentUserId'); // récupérer dans le localstorage
+   
+        
+    
+
+    $rootScope.currentUserId = true;
+    // $rootScope.currentUserId = store.get('currentUserId');
+    console.log(store.get('currentUserId')); // récupérer dans le localstorage
+    $rootScope.image = {};
     var service = {
       currentUserId: store.get('currentUserId'),
 
+      response: function(response){
+            if (response.status === 401) {
+            }
+
+            return response || $q.when(response);
+      },
+      responseError: function(rejection) {
+          var reservedPaths = ['/', '/mycube', '/connect', '/event'];
+          if (rejection.status === 401 && _.contains(reservedPaths, $location.path().trim())) {
+              var stateService = $injector.get('$state');
+              var httpService = $injector.get('$http');
+              stateService.go('home');
+          }
+          return $q.reject(rejection);
+      },
+
       setUser: function(user) {
-        service.currentUserId = user.userId;
-        store.set('currentUserId', user.userId);
+        service.currentUserId = user._id;
+        store.set('currentUserId', user._id);
         $rootScope.currentUserId = store.get('currentUserId');
       },
 
@@ -16,31 +39,8 @@ angular.module('aquarium.auth', ['angular-storage'])
         store.remove('currentUserId');
         $rootScope.currentUserId = store.get('currentUserId');
 
-      },
+      } 
 
-      postPhoto: function(imageData, callback){
-        
-         $http({
-              method: "POST",
-              url: "https://warm-bastion-3094.herokuapp.com/api/images",
-              headers: {
-                Authorization: "Bearer " + "Py7n9/utjzJmYotOoOPnPgmd+x+C8YP9AifhsquC8sVGDNiSEmskPNows5WXKEl6P5W9gBlROZIZl0+kj1iDAMyGnM+w4l75BRWij7rNLJIcHRA8QB2CUUpl5lMtbsOoTJobWO+P/J7oLyt/YGMHMLOqh70ylcr+eYQXYSanjrk=",
-                "Content-Type": "application/json"
-              },
-                data: {
-                data: imageData
-              }
-            }).success(function(data) {
-
-             
-              callback(null, data.url);
-              
-            }).error(function(data){
-                
-
-                //attention au callback
-            });
-      }
       
     };
 
@@ -52,7 +52,7 @@ angular.module('aquarium.auth', ['angular-storage'])
       getPicture: function(options){
         var deferred = $q.defer();
 
-        alert('get picture');
+      
         navigator.camera.getPicture(function(result){
           
           deferred.resolve(result);
@@ -66,7 +66,7 @@ angular.module('aquarium.auth', ['angular-storage'])
     }
   })  
 
-  .controller('LoginCtrl', function(apiUrl,CameraService, AuthService, $http, $ionicHistory, $ionicLoading, $scope, $state) {
+  .controller('LoginCtrl', function(apiUrl,CameraService, AuthService, $http, $ionicHistory,$rootScope, $ionicLoading, $scope, $state) {
 
     // The $ionicView.beforeEnter event happens every time the screen is displayed.
     
@@ -75,17 +75,83 @@ angular.module('aquarium.auth', ['angular-storage'])
       $scope.user = {};
       $scope.users = {};
 
+      $scope.login = function(pseudo, password){
+          console.log('login');
+
+          console.log(pseudo + password);
+          $http({
+              method: "POST",
+              url: apiUrl + "/users/login",
+              data: 
+                {
+               "pseudo" : pseudo,
+                "hashedPassword" : password 
+            }
+              
+            }).success(function(data) {
+
+              $rootScope.user = data.user;
+              $rootScope.userScore = data.scores;
+              AuthService.setUser(data);
+              $state.go('app.home');
+              console.log(data);
+
+              AuthService.setUser(data.user);
+              
+            }).error(function(data){
+                console.log(data);
+                alert('Probleme d authentification');
+                //attention au callback
+            });
+
+      };
+
+
+
+     $scope.newUser = function(pseuedo, email, password, imgId){
+      alert(imgId);
+      $http({
+              method: "POST",
+              url: apiUrl + "/users",
+              data: 
+                {
+                pseudo: pseuedo,
+                email: email,
+                hashedPassword:password,
+                imgId: '5532da73f2e8e1fc04335f0d'
+              }
+              
+            }).success(function(data) {
+
+              console.log(data);
+              $rootScope.newUser = data;
+              console.log('lig');
+              console.log(pseuedo + password);
+              $scope.login(pseuedo, password);
+
+              
+            }).error(function(data){
+                
+                alert('Probleme d authentification');
+                //attention au callback
+            });
+     }
+
+     
+      
+
      $scope.getPhoto = function() {
-          alert('in get photo')
+         
           CameraService.getPicture({
             quality: 75,
-            targetWidth: 320,
-            targetHeight: 320,
+            targetWidth: 500,
+            targetHeight: 500,
             saveToPhotoAlbum: false,
-            destinationType: navigator.camera.DestinationType.DATA_URL
+            destinationType: navigator.camera.DestinationType.DATA_URL,
+            correctOrientation: true
           }).then(function(imageData) {
-            alert(imageData);
-            $scope.imageData = imageData;
+            
+            $scope.imageData = imageData; 
             $http({
               method: "post",
               url: apiUrl + "/images",
@@ -93,16 +159,17 @@ angular.module('aquarium.auth', ['angular-storage'])
                 "Content-type": "application/json"
               },
               data: {
-                data: imageData
+                imgBase64: imageData
               }
             }).success(function(data) {
-              $scope.newIssue.photo = data.url;
-              alert(data);
+              
+              $rootScope.image.imageId = data;
+             
               $state.go('register');
 
             }).error(function(error){
 
-              alert(error);
+              alert('errror' + error);
 
 
             });
@@ -176,26 +243,21 @@ angular.module('aquarium.auth', ['angular-storage'])
     
   })
 
-  .controller('registerCtrl', function(CameraService, AuthService, $scope, $state) {
+  .controller('rankingCtrl', function($http, $rootScope, apiUrl, CameraService, AuthService, $scope, $state) {
     
-     $scope.$on('$ionicView.beforeEnter', function(){
-        
-      })
-
+    // $scope.isBetterRanking(4,9);
+    $scope.isBetterRanking = function(avantDernierRank, actualRank){
+      console.log('avant dernier '  + avantDernierRank);
+      console.log('actuel ' + actualRank);
+      if(avantDernierRank > actualRank){
+        return true;
+      }else{
+        return false;
+      }
+    }
      
     
-      if (navigator.camera) {
-                   CameraService.getPicture({
-                    quality: 75,
-                    targetWidth: 400,
-                    targetHeight: 300,
-                    destinationType: Camera.DestinationType.DATA_URL
-                    }).then(function(imageData) {
-                        
-
-                       
-                    });
-                  }
+    
    
 
     

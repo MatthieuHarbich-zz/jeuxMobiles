@@ -8,11 +8,11 @@
 
 
 
- <div class="profilZone">
+ <div ng-controller="rankingCtrl" class="profilZone">
 
- 	<h2>donatello176</h2>
- 	<img ng-show="!true" class="fleche" src="img/flecheUp.png" alt="">    
- 	<img ng-show="true" class="fleche" src="img/flecheDown.png" alt="">    
+ 	<h2>{{user.pseudo}}</h2>
+ 	<img ng-show="isBetterRanking(6, userScore.rank)" class="fleche" src="img/flecheUp.png" alt="">    
+ 	<img ng-hide="isBetterRanking(6, userScore.rank)" class="fleche" src="img/flecheDown.png" alt="">    
 	
  </div>
  	 

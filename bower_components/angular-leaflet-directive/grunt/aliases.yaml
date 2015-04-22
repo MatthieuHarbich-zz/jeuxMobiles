@@ -84,6 +84,7 @@ build:
 travis:
  - 'bower:install'
  - 'test-unit'
+<<<<<<< HEAD
 
 bump-@:
  - 'bump-only'
@@ -99,3 +100,5 @@ bump-@-major:
  - 'bump-only:major'
  - 'default'
  - 'bump-commit'
+=======
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b

@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function (grunt, options) {
+<<<<<<< HEAD
     var pkgFunction = function(){
         return grunt.file.readJSON('package.json')
     };
@@ -10,4 +11,7 @@ module.exports = function (grunt, options) {
         pkgFunction: pkgFunction
     });
     return pkgFunction();
+=======
+    return grunt.file.readJSON('package.json');
+>>>>>>> c35f75ee9a50e06136946f48ffbdd984d1d2750b
 };
