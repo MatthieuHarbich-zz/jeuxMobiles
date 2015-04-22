@@ -1,17 +1,61 @@
 angular.module('aquarium.home', [])
 
-  .factory('HomeFactory', function($http, apiUrl) {
+  .factory('HomeFactory', function($http, store, apiUrl) {
+
 
       return{
+        
+        
 
+            getUserById: function(id,callback){
+              $http({
+                method: 'GET',
+                url: apiUrl + '/users/' + id + '/scores',
+                headers:{
+                  "Content-type":"application/json",
+                  "x-user-id":store.get('currentUserId'),
+                  "salt": store.get('currentUserSalt')
+                }
 
+              }).success(function(user){
+                callback(null, user);
+              }).error(function(err){
+                callback(err);
+              });
+            }
+   
         
 
     };   
 
   })
 
-  .controller('homeCtrl', function(HomeFactory, $scope, $state){
+  .controller('homeCtrl', function(HomeFactory, AuthService, $rootScope, $scope, $state){
+
+    $scope.$on('$ionicView.beforeEnter', function() {
+
+      HomeFactory.getUserById( AuthService.currentUserId, function(err, data, header){
+        var userId = AuthService.currentUserId;
+        console.log("User id : " + userId);
+
+      if(err){
+        console.log(err);
+        $scope.error = err;
+      }else{
+         console.log("data");
+         console.log(data);
+        $rootScope.user = data.user;
+        $rootScope.userScore = data.scores;
+
+        
+      };
+
+      
+    });
+
+      
+      
+    });
 
     $scope.moveToGames = function(){
       

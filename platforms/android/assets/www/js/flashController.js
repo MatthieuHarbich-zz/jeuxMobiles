@@ -29,7 +29,7 @@ angular.module('aquarium.flash', [])
                 }
             }
         })
-        .controller('flashCtrl', function ($sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
+        .controller('flashCtrl', function ($rootScope, $http, store, apiUrl, $sce, HomeFactory, $state, $window, $scope, $ionicPlatform, musicController) {
             $scope.compass = {};
             $scope.animation = {};
             var count_tape = 0;
@@ -40,7 +40,33 @@ angular.module('aquarium.flash', [])
 
             function send_score(score_to_send)
             {
+                
+                 store.set('lastFlash', score_to_send);
+                $http({
+                    method: "POST",
+                    url: apiUrl + "/scores",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        salt: store.get('currentUserSalt')
+                    },
+                    data:
+                            {
+                                user: store.get('currentUserId'),
+                                pts: score_to_send.toString(),
+                                gameName: "flash"
+                            }
 
+                }).success(function (data) {
+
+                    console.log("Ok!");
+
+
+                }).error(function (data) {
+
+                    console.log(data);
+                    console.log(score_to_send);
+                    //attention au callback
+                });
             }
             function specialText(star)
             {

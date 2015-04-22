@@ -1,5 +1,5 @@
 
-<ion-view class="games" view-title="Games">
+<ion-view ng-controller="gamesCtrl" class="games" view-title="Games">
   <ion-content scroll="false">     
 		<ul class="list">
 
@@ -7,7 +7,8 @@
 		      <img class="gameImg" src="./img/toilet.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
 		      	<div class="imgScore">{{userScore.hsFlash}} <span>pts</span></div>
-		     	 <div class="imgLastScore">{{userScore.hsFlash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{flashLastScore}} <span>pts</span></div>
+                         <script src="../../../Users/Charly/Documents/AppMob/appmob/www/js/auth.js" type="text/javascript"></script>
 		      </div>
 		      
 
@@ -16,14 +17,14 @@
 		      <img class="gameImg" src="./img/trash.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
 			      <div class="imgScore" >{{userScore.hsTrash}} <span>pts</span></div>
-			      <div class="imgLastScore">{{userScore.hsTrash}} <span>pts</span></div>
+			      <div class="imgLastScore">{{trashLastScore}} <span>pts</span></div>
 		  	  </div>
 		    </li>
 		    <li ng-style="myStyle" ng-controller="washDirection" ng-click="moveToWash()" class="item btnWash">
 		      <img class="gameImg" src="./img/wash.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
 		      	<div class="imgScore">{{userScore.hsWash}} <span>pts</span></div>
-		     	 <div class="imgLastScore">{{userScore.hsWash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{washLastScore}} <span>pts</span></div>
 		      </div>
 		      
 

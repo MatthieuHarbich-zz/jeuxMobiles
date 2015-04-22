@@ -1,19 +1,28 @@
 <ion-view class="Register" view-title="aquarium">
-  <ion-content  ng-controller="LoginCtrl" class="padding login">
+  <ion-content class="padding login">
 		
-		
-		<div class="registerImage" ng-style="{'background-image':'url(http://pfouah2015.herokuapp.com/api/images/{{image.imageId}})'}"> ></div>
-		
+		  <div class="obligatoire"  ng-class="{'disapear':animation.buttonphoto}"><button id="buttonLogin" ng-click="takePhoto()"class="button buttonLogin button-block button-assertive">
+  			Prends une photo!
+                        </button></div>
+		<div class="registerImage">
+                    
+                  
+                    <div class="toFill" ng-bind-html="animation.img"></div>
+                </div>
+      
+      
+      <p class="info_register">Une photo de profil est obligatoire pour notre concours de la meilleure photo !</p>
+      
 		<div id="registerForm" class="list">
 		  
-		    
-		    <input type="text" ng-model="newPseuedo" placeholder="Pseuedo pleeaaase...">
+		    <p class="info_register">{{animation.error}}</p>
+		    <input type="text" ng-model="newPseuedo" placeholder="Votre pseudo">
 		  
 		    
 		    <input type="email" ng-model="newEmail" placeholder="jean.bon@heig-vd.ch">
 		  
 		   
-		    <input type="password" ng-model="newPassword" placeholder="password">
+		    <input type="password" ng-model="newPassword" placeholder="Mot de passe">
 		 
 		</div>
 		<button id="buttonLogin" ng-click="newUser(newPseuedo, newEmail, newPassword, image.imageId)"class="button buttonLogin button-block button-assertive">

@@ -7,41 +7,47 @@ angular.module('aquarium.games', [])
 
         })
 
-        .controller('gamesCtrl', function (HomeFactory, $window, $scope,musicController,$ionicPlatform) {
+        .controller('gamesCtrl', function (store, HomeFactory, $window, $scope, musicController, $ionicPlatform) {
 
 
 
-            console.log($window.innerHeight);
+
 
             $scope.height = ($window.innerHeight + 3) / 3;
 
             $scope.heightStyle = "" + $scope.height + "px";
 
-            console.log($scope.heightStyle);
+
 
 
             $scope.myStyle = {
                 "height": $scope.heightStyle
             };
-            
-            
+
+
             $ionicPlatform.on('resume', function () {
 
-                    musicController.stopAmbianceMusique();
-                    
-                });
+                musicController.stopAmbianceMusique();
+
+            });
+
+            $scope.$on("$ionicView.enter", function (scopes, states) {
+                $scope.trashLastScore = store.get('lastTrash');
+                $scope.flashLastScore = store.get('lastFlash');
+                $scope.washLastScore = store.get('lastWash');
+                $scope.$apply();
+            });
 
 
 
 
-
-      $scope.myStyle = {
-		    "height" : $scope.heightStyle
-		};
-        $scope.myStyleScore = {
-        "height" : $scope.heightStyle,
-        "line-height": $scope.heightStyle
-        };
+            $scope.myStyle = {
+                "height": $scope.heightStyle
+            };
+            $scope.myStyleScore = {
+                "height": $scope.heightStyle,
+                "line-height": $scope.heightStyle
+            };
 
 
         })
@@ -50,7 +56,7 @@ angular.module('aquarium.games', [])
 
 
 
-        
+
 
         .controller('washDirection', function ($state, $window, $scope, $ionicPopup, $ionicPlatform) {
             $scope.moveToWash = function () {
@@ -58,24 +64,24 @@ angular.module('aquarium.games', [])
             }
 
         })
-        
+
         .controller('trashDirection', function ($state, $window, $scope, $ionicPopup, $ionicPlatform) {
             $scope.moveToTrash = function () {
                 $state.go('app.trash', {}, {cache: false});
             }
 
         })
-        
+
         .controller('flashDirection', function ($state, $window, $scope, $ionicPopup, $ionicPlatform) {
-           $scope.moveToFlash = function () {
+            $scope.moveToFlash = function () {
 
                 $state.go('app.flash', {}, {cache: false});
             }
 
         })
-        
-        
-       
+
+
+
 
 
 

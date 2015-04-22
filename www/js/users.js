@@ -34,7 +34,7 @@ angular.module('aquarium.users', [])
 				$scope.error = err;
 			}else{
 				$scope.users = data;
-				console.log($$scope.users);
+				console.log($scope.users);
 			}
 
 			console.log('users');

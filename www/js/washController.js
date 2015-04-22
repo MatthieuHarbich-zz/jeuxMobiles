@@ -47,7 +47,7 @@ angular.module('aquarium.wash', [])
             
             function send_score (score_to_send)
             {
-                $rootScope.lastScore = score_to_send;
+                store.set('lastWash', score_to_send);
                 $http({
                     method: "POST",
                     url: apiUrl + "/scores",

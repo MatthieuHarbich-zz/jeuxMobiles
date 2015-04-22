@@ -13,7 +13,7 @@ angular.module('aquarium.home', [])
                 url: apiUrl + '/users/' + id + '/scores',
                 headers:{
                   "Content-type":"application/json",
-                  "x-user-id":id,
+                  "x-user-id":store.get('currentUserId'),
                   "salt": store.get('currentUserSalt')
                 }
 

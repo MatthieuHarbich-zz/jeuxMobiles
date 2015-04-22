@@ -40,7 +40,8 @@ angular.module('aquarium.flash', [])
 
             function send_score(score_to_send)
             {
-                $rootScope.lastScore = score_to_send;
+                
+                 store.set('lastFlash', score_to_send);
                 $http({
                     method: "POST",
                     url: apiUrl + "/scores",
@@ -52,7 +53,7 @@ angular.module('aquarium.flash', [])
                             {
                                 user: store.get('currentUserId'),
                                 pts: score_to_send.toString(),
-                                gameName: "wash"
+                                gameName: "flash"
                             }
 
                 }).success(function (data) {

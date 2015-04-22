@@ -10,6 +10,56 @@
     font-style: normal;
 
 }
+#loginForm p {
+    width:100%;
+    text-align: center;
+    font-size: 2.5em;
+}
+.logo {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.info_register {
+    width: 100%;
+    margin-top: 3%;
+    text-align: center;
+    font-size: 1em;
+}
+
+.obligatoire {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    position: absolute;
+    text-align: center;
+    margin-top: 20%;
+}
+.disapear {
+    display: none;
+}
+
+.toFill{
+    width: 100%;
+    height: 100%;
+}
+
+.toFillimg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo img {
+    width: 50vh;
+    height: 40vh;
+}
+
+.missing {
+    background-color: red;
+}
 
 
 
@@ -199,7 +249,7 @@ timer{
 #registerForm{
 	width:70%;
 	margin-left:15%;
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 button{

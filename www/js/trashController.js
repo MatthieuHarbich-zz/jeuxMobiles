@@ -89,7 +89,8 @@ angular.module('aquarium.trash', [])
 
             function send_score(score_to_send)
             {
-                $rootScope.lastScore = score_to_send;
+
+                store.set('lastTrash', score_to_send);
                 $http({
                     method: "POST",
                     url: apiUrl + "/scores",
