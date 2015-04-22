@@ -6,8 +6,8 @@
 		    <li ng-style="myStyle" ng-controller="flashDirection" ng-click="moveToFlash()" class="item btnFlash">
 		      <img class="gameImg" src="./img/toilet.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
-		      	<div class="imgScore">34 {{userScore.hsFlash}} <span>pts</span></div>
-		     	 <div class="imgLastScore">345{{userScore.hsFlash}} <span>pts</span></div>
+		      	<div class="imgScore">{{userScore.hsFlash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{userScore.hsFlash}} <span>pts</span></div>
 		      </div>
 		      
 
@@ -15,15 +15,15 @@
 		    <li ng-style="myStyle" ng-controller="trashDirection" ng-click="moveToTrash()" class="item btnTrash">
 		      <img class="gameImg" src="./img/trash.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
-			      <div class="imgScore" >5454{{userScore.hsTrash}} <span>pts</span></div>
-			      <div class="imgLastScore">345{{userScore.hsTrash}} <span>pts</span></div>
+			      <div class="imgScore" >{{userScore.hsTrash}} <span>pts</span></div>
+			      <div class="imgLastScore">{{userScore.hsTrash}} <span>pts</span></div>
 		  	  </div>
 		    </li>
 		    <li ng-style="myStyle" ng-controller="washDirection" ng-click="moveToWash()" class="item btnWash">
 		      <img class="gameImg" src="./img/wash.png" ng-style="myStyle" alt="">
 		      <div id="scores" ng-style="myStyleScore">
-		      	<div class="imgScore">345{{userScore.hsWash}} <span>pts</span></div>
-		     	 <div class="imgLastScore">345{{userScore.hsWash}} <span>pts</span></div>
+		      	<div class="imgScore">{{userScore.hsWash}} <span>pts</span></div>
+		     	 <div class="imgLastScore">{{userScore.hsWash}} <span>pts</span></div>
 		      </div>
 		      
 
