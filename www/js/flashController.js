@@ -278,7 +278,7 @@ angular.module('aquarium.flash', [])
                                     }
                                     else
                                     {
-                                        if (numb_tour_during_time > 40)
+                                        if (numb_tour_during_time >= 40)
                                         {
                                             specialText(5);
                                         }

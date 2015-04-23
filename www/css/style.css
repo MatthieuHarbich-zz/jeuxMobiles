@@ -2,13 +2,23 @@
     font-family: 'helsinkiregular';
     src: url('fonts/helsinki-webfont.eot');
     src: url('fonts/helsinki-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/helsinki-webfont.woff2') format('woff2'),
-         url('fonts/helsinki-webfont.woff') format('woff'),
-         url('fonts/helsinki-webfont.ttf') format('truetype'),
-         url('fonts/helsinki-webfont.svg#helsinkiregular') format('svg');
+        url('fonts/helsinki-webfont.woff2') format('woff2'),
+        url('fonts/helsinki-webfont.woff') format('woff'),
+        url('fonts/helsinki-webfont.ttf') format('truetype'),
+        url('fonts/helsinki-webfont.svg#helsinkiregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
+}
+
+#teasertext {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 15vh;
+    font-size : 5vw;
+     font-family: helsinkiregular;
+      color: white;
 }
 #loginForm p {
     width:100%;
@@ -17,10 +27,35 @@
 }
 .logo {
     position: relative;
-    width: 100%;
-    height: 40vh;
+    width: 80vw;
+    height: 30vh;
+    margin-left: 10%;
     text-align: center;
     margin-top: 5%;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+
+#logout {
+    position: absolute;
+    top: 2%;
+    left: 0px;
+    width: 35vw;
+}
+
+#actual_score {
+    position: absolute;
+
+    color: white;
+    font-size: 2em;
+    top: 40vh;
+    width:50vw;
+    text-align: center;
+    height: 60vw;
+    left: 25%;
 }
 
 .info_register {
@@ -36,7 +71,7 @@
     padding-left: 10%;
     position: absolute;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10vh;
 }
 .disapear {
     display: none;
@@ -52,10 +87,7 @@
     height: 100%;
 }
 
-.logo img {
-    width: 50vh;
-    height: 40vh;
-}
+
 
 .missing {
     background-color: red;
@@ -64,229 +96,232 @@
 
 
 *{
-	font-family: helsinkiregular;
+    font-family: helsinkiregular;
 }
 .games{
-	background-color: #11c1f3;
+    background-color: #11c1f3;
 }
 
 
 
 .btnFlash{
-	background-color: #89CE9A;
-	border:none;
+    background-color: #89CE9A;
+    border:none;
 }
 
 .btnTrash{
-	background-color: #F9B995;
-	border:none;
+    background-color: #F9B995;
+    border:none;
 }
 
 .btnWash{
-	background-color: #9DE7F9;
-	border:none;
+    background-color: #9DE7F9;
+    border:none;
 }
 
 .flash{
-	background-color: #89CE9A;
+    background-color: #89CE9A;
 }
 
 .trash{
-	background-color: #F9B995;
+    background-color: #F9B995;
 }
 
 .wash{
-	background-color: #9DE7F9;
-	
+    background-color: #9DE7F9;
+
 }
 
 #flash{
-	
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 
 }
 
 #wash{
-	
-	background-color: #9DE7F9;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
+
+    background-color: #9DE7F9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #trash{
 
-	background-color: #F9B995;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
+    background-color: #F9B995;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #playGamesBtn{
-	height:30%;
-	position: fixed;
-	bottom:-2px;
-	padding:0px;
-	border-color: #9de7f9;
-	margin:0;
-	background-color: #9de7f9;
-	font-size:2em;
-	font-weight: 900;
-	text-transform: uppercase;
-	font-family: helsinkiregular;
+    height:30%;
+    position: fixed;
+    bottom:-2px;
+    padding:0px;
+    border-color: #9de7f9;
+    margin:0;
+    background-color: #9de7f9;
+    font-size:2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: helsinkiregular;
 }
 
 .gameImg{
-	position:absolute;
-	top:0;
-	max-width: 50%;
+    position:absolute;
+    top:0;
+    max-width: 50%;
 }
 
 .login{
-	background-color: #D3E4F5;
+    background-color: #D3E4F5;
 
 }
 
 .home{
-	background-color: #f9b995;
+    background-color: #f9b995;
 }
 
 .profilZone{
-	height:30%;
-	width:100%;
+    position: absolute;
+    margin-top: 20vh;
+    height:30%;
+    width:100%;
+    text-align: center;
 
-	
+
 }
 
-.profilZone h2{
-	font-family:helsinkiregular;
-	color:white;
-	width:100%;
-	text-align: center;
-	margin-top:30px;
-	padding-left: 20px;
-	
-	
+.special_h2{
+    font-family:helsinkiregular;
+    color:white;
+    width:100%;
+    text-align: center;
+    margin-top:30px;
+    padding-left: 20px;
+
+
 }
 .profil{
-	float: right;
-	
-	height:100%;
+    
+    float: right;
+
+    height:100%;
 }
 
 timer{
-	color:white;
-	position:fixed;
-	bottom:32%;
-	width:100%;
-	text-align: center;
-	z-index:2000;
-	font-size: 1.3em;
-	font-weight: bold;
+    color:white;
+    position:fixed;
+    bottom:32%;
+    width:100%;
+    text-align: center;
+    z-index:2000;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .tease img{
-	position:fixed;
-	bottom:29%;
-	width:50%;
-	left: 25%;
+    position:fixed;
+    bottom:29%;
+    width:50vw;
+    height: 40vh;
+    left: 25%;
 }
 
 /*.login img{
-	margin-left: 35%;
-	margin-top: 10%;
-	width:30%;
+        margin-left: 35%;
+        margin-top: 10%;
+        width:30%;
 }*/
 
 #loginForm input{
-	padding: 25px;
-	width:100%;
-	margin-top: 10px;
+    padding: 25px;
+    width:100%;
+    margin-top: 10px;
 }
 
 .fleche{
-	
-	
-	width:10%;
-	margin-left: 45%;
-	margin-right: auto;
-	margin-top:10px;
+
+
+    width:7vh;
+    height: 7vh;
 }
 
 
 
 #loginForm{
-	margin-top: 10%;
-	width:70%;
-	background-color: rgb(0,0,0,0);
-	margin-left: 15%;
+    margin-top: 10%;
+    width:70%;
+    background-color: rgb(0,0,0,0);
+    margin-left: 15%;
 }
 
 #buttonLogin{
-	width:70%;
-	margin-left: 15%;
+    width:70%;
+    margin-left: 15%;
 }
 
 .registerImage{
-	margin-top: 40px;
-	border:7px solid black;
-	
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	width:70%;
-	height:230px;
-	margin-left: 15%;
+    margin-top: 40px;
+    border:7px solid black;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:70%;
+    height:230px;
+    margin-left: 15%;
 }
 #registerForm input{
-	padding: 25px;
-	width:100%;
-	margin-top: 10px;
+    padding: 25px;
+    width:100%;
+    margin-top: 10px;
 }
 
 #registerForm{
-	width:70%;
-	margin-left:15%;
-	margin-top: 10px;
+    width:70%;
+    margin-left:15%;
+    margin-top: 10px;
 }
 
 button{
-	font-family: helsinkiregular;
+    font-family: helsinkiregular;
 }
 
 .imgLastScore{
-	text-align:right;
-	margin-right: 5%;
-	font-size: 1.5em;
-	color:white;
-	font-weight: 800;
-	position:absolute;
-	top:10%;
-	right:10%;
-	font-family: helsinkiregular;
-	
+    text-align:right;
+    margin-right: 5%;
+    font-size: 1.5em;
+    color:white;
+    font-weight: 800;
+    position:absolute;
+    top:10%;
+    right:10%;
+    font-family: helsinkiregular;
+
 }
 
 .imgLastScore span{
-	text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .imgScore span{
-	text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .imgScore{
-	text-align:right;
-	margin-right: 5%;
-	font-size: 2.5em;
-	color:white;
-	font-weight: 800;
-	position:absolute;
-	top:-10%;
-	right:10%;
-	font-family: helsinkiregular;
+    text-align:right;
+    margin-right: 5%;
+    font-size: 2.5em;
+    color:white;
+    font-weight: 800;
+    position:absolute;
+    top:-10%;
+    right:10%;
+    font-family: helsinkiregular;
 
 }
 

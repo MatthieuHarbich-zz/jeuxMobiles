@@ -172,7 +172,7 @@ angular.module('aquarium.trash', [])
                     {
 
 
-                        if (numb_tour_during_time < 3)
+                        if (numb_tour_during_time < 5)
                         {
                             specialText(1);
 
@@ -197,7 +197,7 @@ angular.module('aquarium.trash', [])
                                     }
                                     else
                                     {
-                                        if (numb_tour_during_time > 23)
+                                        if (numb_tour_during_time >= 18)
                                         {
                                             specialText(5);
                                         }

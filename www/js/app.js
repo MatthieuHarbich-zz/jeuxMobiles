@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('aquarium', ['ionic', 'timer', 'aquarium.auth', 'aquarium.constants', 'aquarium.home', 'aquarium.games', 'aquarium.wash', 'aquarium.flash', 'aquarium.trash', 'aquarium.music'])
+angular.module('aquarium', ['ionic','jrCrop', 'timer', 'aquarium.auth', 'aquarium.constants', 'aquarium.home', 'aquarium.games', 'aquarium.wash', 'aquarium.flash', 'aquarium.trash', 'aquarium.music'])
 
 
         .run(function ($ionicPlatform) {
@@ -119,6 +119,7 @@ angular.module('aquarium', ['ionic', 'timer', 'aquarium.auth', 'aquarium.constan
 
                     .state('register', {
                         url: '/register',
+                        cache: false,
                         controller: 'RegisterCtrl',
                         templateUrl: 'templates/register.html'
                     })
@@ -126,6 +127,7 @@ angular.module('aquarium', ['ionic', 'timer', 'aquarium.auth', 'aquarium.constan
 
                     .state('login', {
                         url: '/login',
+                        cache: false,
                         controller: 'LoginCtrl',
                         templateUrl: 'templates/login.html'
                     })

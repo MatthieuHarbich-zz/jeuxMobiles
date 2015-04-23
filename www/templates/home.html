@@ -4,28 +4,38 @@
 
 
 
-  <ion-content scroll="false">
+    <ion-content scroll="false">
+
+        <h1 id="teasertext">Vendredi, 1 mai, remise des prix !</h1>
+        <div id="logout" ng-controller="LogoutCtrl">
+            <button id="buttonLogin" ng-click="logOut()"class="button buttonLogin button-block button-assertive">
+                X
+            </button>
+        </div>
+        <h2 class="special_h2">{{user.pseudo}}</h2>
 
 
 
- <div ng-controller="rankingCtrl" class="profilZone">
 
- 	<h2>{{user.pseudo}}</h2>
- 	<img ng-show="isBetterRanking(6, userScore.rank)" class="fleche" src="img/flecheUp.png" alt="">    
- 	<img ng-hide="isBetterRanking(6, userScore.rank)" class="fleche" src="img/flecheDown.png" alt="">    
-	
- </div>
- 	 
-
-
-<div class="tease">
-	<timer end-time="1430474400000">{{days}} J, {{hours}} H, {{minutes}} M, {{seconds}} S.</timer>
-	<img src="img/winner.png" alt="">
-</div>
-<button href="#/app/games" id="playGamesBtn" ng-click="moveToGames()" class="button button-full button-positive">
-  	Joue aux jeux
-</button>
+        <div class="tease">
+            <timer end-time="1430474400000">{{days}} J, {{hours}} H, {{minutes}} M, {{seconds}} S.</timer>
+            <img src="img/winner.png" alt="">
+        </div>
+        <button href="#/app/games" id="playGamesBtn" ng-click="moveToGames()" class="button button-full button-positive">
+            Joue aux jeux
+        </button>
+        <div ng-controller="rankingCtrl" class="profilZone">
 
 
-  </ion-content>
+            <img ng-show="isBetterRanking(userScore.old, userScore.rank)" class="fleche" src="img/flecheUp.png" alt="">    
+            <img ng-hide="isBetterRanking(userScore.old, userScore.rank)" class="fleche" src="img/flecheDown.png" alt="">    
+
+        </div>
+        <div id="actual_score">
+            <p> Score: </p>
+            <p>{{user.score}}</p>
+        </div>
+
+
+    </ion-content>
 </ion-view>

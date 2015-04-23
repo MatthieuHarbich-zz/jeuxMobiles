@@ -30,7 +30,7 @@ angular.module('aquarium.home', [])
 
   })
 
-  .controller('homeCtrl', function(HomeFactory, AuthService, $rootScope, $scope, $state){
+  .controller('homeCtrl', function(store,HomeFactory, AuthService, $rootScope, $scope, $state){
 
     $scope.$on('$ionicView.beforeEnter', function() {
 
@@ -46,6 +46,19 @@ angular.module('aquarium.home', [])
          console.log(data);
         $rootScope.user = data.user;
         $rootScope.userScore = data.scores;
+        if (store.get('rank')== 0)
+        {
+            $scope.userScore.old = 0;
+        }
+        else
+        {
+            $scope.userScore.old  = store.get('rank') ;
+        }
+        
+         $scope.user.score = data.scores.scoreTot;
+         
+          store.set('rank', data.scores.rank);
+      
 
         
       };

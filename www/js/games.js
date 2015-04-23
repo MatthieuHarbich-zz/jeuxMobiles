@@ -32,9 +32,10 @@ angular.module('aquarium.games', [])
             });
 
             $scope.$on("$ionicView.enter", function (scopes, states) {
-                $scope.trashLastScore = store.get('lastTrash');
-                $scope.flashLastScore = store.get('lastFlash');
-                $scope.washLastScore = store.get('lastWash');
+                
+                $scope.trashLastScore = store.get('lastTrash') + " pts";
+                $scope.flashLastScore = store.get('lastFlash') + " pts";
+                $scope.washLastScore = store.get('lastWash') + " pts";
                 $scope.$apply();
             });
 

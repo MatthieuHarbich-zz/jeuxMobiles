@@ -4,15 +4,15 @@
       <div class="logo"><img src="img/pfouah.png" alt=""></div>
 	   <div  id="loginForm" class="">
 		  <p> {{animation.error}} </p>
-		    <input ng-model="pseudo" type="text" placeholder="Pseudo" ng-class="{'missing':animation.pseudo}">		  
-		    <input ng-model="password" type="password" placeholder="Mot de passe" ng-class="{'missing':animation.password}">
+		    <input ng-model="pseudo" type="text" placeholder="Ton pseudo" ng-class="{'missing':animation.pseudo}">		  
+		    <input ng-model="password" type="password" placeholder="Ton mot de passe" ng-class="{'missing':animation.password}">
 	  	  
 		</div>
 		<button id="buttonLogin" ng-click="login(pseudo, password)" class="button buttonLogin button-block button-positive" >
   			Connexion
 		</button>
 		<button id="buttonLogin" ng-click="moveToRegister()"class="button buttonLogin button-block button-assertive">
-  			Enregistre toi!!
+  			Enregistre toi!
 		</button>
                 
 

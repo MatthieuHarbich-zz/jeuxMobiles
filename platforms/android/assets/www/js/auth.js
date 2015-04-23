@@ -71,50 +71,72 @@ angular.module('aquarium.auth', ['angular-storage'])
             }
         })
 
-        .controller('RegisterCtrl', function ($ionicPlatform, $sce, apiUrl, CameraService, AuthService, $http, $ionicHistory, $rootScope, $ionicLoading, $scope, $state) {
+        .controller('RegisterCtrl', function ($jrCrop, $ionicPlatform, $sce, apiUrl, CameraService, AuthService, $http, $ionicHistory, $rootScope, $ionicLoading, $scope, $state) {
 
 
             $ionicPlatform.ready(function () {
                 var imageId;
+
+
+
                 $scope.animation = {};
+
+
 
                 $scope.takePhoto = function () {
                     try {
                         CameraService.getPicture({
-                            quality: 75,
+                            quality: 100,
                             targetWidth: 500,
                             targetHeight: 500,
                             saveToPhotoAlbum: false,
-                            destinationType: 0,
+                            destinationType: 1,
                             correctOrientation: true
                         }).then(function (imageData) {
-                            $ionicLoading.show({
-                                template: 'Upload de votre photo...',
-                                delay: 0
-                            });
-                            $http({
-                                method: "post",
-                                url: apiUrl + "/images",
-                                headers: {
-                                    "Content-type": "application/json"
-                                },
-                                data: {
-                                    imgBase64: imageData
-                                }
-                            }).success(function (data) {
 
+                            $jrCrop.crop({
+                                url: imageData,
+                                width: 300,
+                                title: 'Redimensionne',
+                                height: 300
+                            }).then(function (canvas) {
+                                // success!                            
+                                var image = canvas.toDataURL("image/png", 1.0);
+                                $ionicLoading.show({
+                                    template: 'Upload de votre photo...',
+                                    delay: 0
+                                });
+                                $http({
+                                    method: "post",
+                                    url: apiUrl + "/images",
+                                    headers: {
+                                        "Content-type": "application/json"
+                                    },
+                                    data: {
+                                        imgBase64: image.replace(/^data:image\/(png|jpg);base64,/, "")
+                                    }
+                                }).success(function (data) {
+                                    $scope.animation.dataURL = image;
+                                    imageId = data;
+                                    $ionicLoading.hide();
+//                                    var toAdd = '<img class="toFillimg" src="http://pfouah2015.herokuapp.com/api/images/' + data + '" alt="">';
+//                                    imageId = data;
+//                                    $scope.animation.img = $sce.trustAsHtml(toAdd);
+                                    $scope.animation.buttonphoto = true;
+
+
+                                }).error(function (error) {
+                                    $ionicLoading.hide();
+                                    $scope.animation.error = error;
+
+                                });
+
+                            }, function () {
+                                $scope.animation.error = "Probleme de redimensionnement";
                                 $ionicLoading.hide();
-                                var toAdd = '<img class="toFillimg" src="http://pfouah2015.herokuapp.com/api/images/' + data + '" alt="">';
-                                imageId = data;
-                                $scope.animation.img = $sce.trustAsHtml(toAdd);
-                                $scope.animation.buttonphoto = true;
-
-
-                            }).error(function (error) {
-                                $ionicLoading.hide();
-                                $scope.animation.error = error;
-
                             });
+
+
 
 
 
@@ -131,53 +153,108 @@ angular.module('aquarium.auth', ['angular-storage'])
 
 
 
-                $scope.newUser = function (pseuedo, email, password, imgId) {
+                $scope.newUser = function (pseuedo, password) {
+                    $scope.animation.password = false;
+                    $scope.animation.image = false;
+                    $scope.animation.pseudo = false;
+
+                    if (imageId == null)
+                    {
+                        $scope.animation.error = "Vous devez fournir une image !";
+                        $scope.animation.image = true;
+                    }
+                    else
+                    {
+                        if (pseuedo == null)
+                        {
+                            $scope.animation.pseudo = true;
+                            $scope.animation.error = "Indiquez un pseudo !";
+                        }
+                        else
+                        {
+                            if (password == null)
+                            {
+                                $scope.animation.error = "Indiquez un mot de passe !";
+                                $scope.animation.password = true;
+                            }
+                            else
+                            {
+                                $ionicLoading.show({
+                                    template: 'Inscription',
+                                    delay: 0
+                                });
+                                $http({
+                                    method: "POST",
+                                    url: apiUrl + "/users",
+                                    data:
+                                            {
+                                                pseudo: pseuedo,
+                                                hashedPassword: password,
+                                                imgId: imageId
+                                            }
+
+                                }).success(function (data) {
+                                    $ionicLoading.hide();
+
+                                    $ionicLoading.show({
+                                        template: 'Connexion',
+                                        delay: 0
+                                    });
+
+
+                                    $http({
+                                        method: "POST",
+                                        url: apiUrl + "/users/login",
+                                        data:
+                                                {
+                                                    "pseudo": pseuedo,
+                                                    "hashedPassword": password
+                                                }
+
+                                    }).success(function (data) {
+
+                                        $rootScope.user = data.user;
+                                        $rootScope.userScore = data.scores;
+                                        AuthService.setUser(data.user);
+                                        AuthService.setSalt(data.user);
+
+                                        $ionicLoading.hide();
+                                        $ionicHistory.nextViewOptions({
+                                            disableBack: true,
+                                            historyRoot: true
+                                        });
+                                        $state.go('app.home');
+                                        console.log(data);
 
 
 
-                    $ionicLoading.show({
-                        template: 'Register in...',
-                        delay: 0
-                    });
+                                    }).error(function (data) {
+                                        console.log(data);
+                                        $ionicLoading.hide();
+                                        $scope.animation.error = data.message;
+                                        //attention au callback
+                                    });
 
 
-                    alert(imgId);
+                                }).error(function (data) {
+                                    $ionicLoading.hide();
 
-                    $http({
-                        method: "POST",
-                        url: apiUrl + "/users",
-                        data:
-                                {
-                                    pseudo: pseuedo,
-                                    email: email,
-                                    hashedPassword: password,
-                                    imgId: imageId
-                                }
+                                    if (data.message == null)
+                                    {
+                                        $scope.animation.error = data;
+                                    }
+                                    else
+                                    {
+                                        $scope.animation.error = data.message;
+                                    }
 
-                    }).success(function (data) {
-                        $ionicLoading.hide();
-                        console.log(data);
-                        $rootScope.newUser = data;
-                        console.log('lig');
-                        console.log(pseuedo + password);
-                        $scope.login(pseuedo, password);
-                        AuthService.setUser(data.user);
-                        AuthService.setSalt(data.user);
-
-                        $ionicLoading.hide();
-                        $ionicHistory.nextViewOptions({
-                            disableBack: true,
-                            historyRoot: true
-                        });
-                        $state.go('app.home');
-                        console.log(data);
+                                    //attention au callback
+                                });
+                            }
+                        }
+                    }
 
 
-                    }).error(function (data) {
-                        $ionicLoading.hide();
-                        alert('Probleme d authentification');
-                        //attention au callback
-                    });
 
 
 
@@ -199,6 +276,7 @@ angular.module('aquarium.auth', ['angular-storage'])
                 if (pseudo == null)
                 {
                     $scope.animation.pseudo = true;
+                    $scope.animation.error = "Indiquez un pseudo !";
 
                 }
                 else
@@ -206,6 +284,7 @@ angular.module('aquarium.auth', ['angular-storage'])
                     if (password == null)
                     {
                         $scope.animation.password = true;
+                        $scope.animation.error = "Indiquez un mot de passe !";
                     }
                     else
                     {
@@ -215,7 +294,7 @@ angular.module('aquarium.auth', ['angular-storage'])
 
                         console.log(pseudo + password);
                         $ionicLoading.show({
-                            template: 'Login in...',
+                            template: 'Connexion',
                             delay: 0
                         });
                         $http({
@@ -247,7 +326,14 @@ angular.module('aquarium.auth', ['angular-storage'])
                         }).error(function (data) {
                             console.log(data);
                             $ionicLoading.hide();
-                            $scope.animation.error = "N'existe pas :/";
+                            if (data.message == null)
+                            {
+                                $scope.animation.error = data;
+                            }
+                            else
+                            {
+                                $scope.animation.error = data.message;
+                            }
                             //attention au callback
                         });
                     }
@@ -265,7 +351,7 @@ angular.module('aquarium.auth', ['angular-storage'])
 
         })
 
-        .controller('LogoutCtrl', function (AuthService, $scope, $state) {
+        .controller('LogoutCtrl', function ( AuthService, $scope, $state) {
 
             $scope.logOut = function () {
                 AuthService.unsetUser();
@@ -282,7 +368,7 @@ angular.module('aquarium.auth', ['angular-storage'])
             $scope.isBetterRanking = function (avantDernierRank, actualRank) {
                 console.log('avant dernier ' + avantDernierRank);
                 console.log('actuel ' + actualRank);
-                if (avantDernierRank > actualRank) {
+                if (avantDernierRank >= actualRank) {
                     return true;
                 } else {
                     return false;

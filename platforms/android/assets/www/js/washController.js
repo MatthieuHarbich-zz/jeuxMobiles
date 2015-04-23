@@ -263,13 +263,13 @@ angular.module('aquarium.wash', [])
                                 }
                                 else
                                 {
-                                    if (numb_tour_during_time < 8)
+                                    if (numb_tour_during_time < 7)
                                     {
                                         specialText(4);
                                     }
                                     else
                                     {
-                                        if (numb_tour_during_time > 8)
+                                        if (numb_tour_during_time >= 7)
                                         {
                                             specialText(5);
                                         }
